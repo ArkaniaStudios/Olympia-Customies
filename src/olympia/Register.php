@@ -43,6 +43,6 @@ class Register {
 
     private static function block(): void {
         $b = BlockUtils::getInstance();
-        $b->register(ChunkBuster::class, "Chunk buster", 2, "chunkbuster", "chunk_buster");
+        $b->register(ChunkBuster::class, "Chunk buster", "chunkbuster", "chunk_buster");
     }
 }

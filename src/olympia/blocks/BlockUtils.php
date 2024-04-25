@@ -19,7 +19,6 @@ class BlockUtils {
     public function register(
         $class,
         string $name,
-        int $breakSpeed = 1,
         string $identifier,
         string $texture,
         int $ghost = 0,
@@ -32,7 +31,7 @@ class BlockUtils {
             static fn() => new $class(
                 new BlockIdentifier($id),
                 $name,
-                new BlockTypeInfo(new BlockBreakInfo($breakSpeed))
+                new BlockTypeInfo(new BlockBreakInfo(1))
             ),
             "olympia:" . $identifier,
             new Model([new Material(
