@@ -5,21 +5,21 @@ namespace olympia;
 use olympia\blocks\BlockUtils;
 use olympia\blocks\ChunkBuster;
 use olympia\items\ItemUtils;
-use olympia\items\Sickle;
+use olympia\items\mythril\MythrilSickle;
 
 class Register {
 
     public static function registerAll(): void {
-        (new Register)->item();
-        (new Register)->block();
+        self::item();
+        self::block();
     }
 
-    private function item(): void {
+    private static function item(): void {
         $i = ItemUtils::getInstance();
-        $i->register(Sickle::class, "sickle", "Faucille");
+        $i->register(MythrilSickle::class, "mythril_sickle", "Faucille en mythril");
     }
 
-    private function block(): void {
+    private static function block(): void {
         $b = BlockUtils::getInstance();
         $b->register(ChunkBuster::class, "Chunk buster", 2, "chunkbuster", "chunk_buster");
     }
