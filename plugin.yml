@@ -1,0 +1,11 @@
+name: Olympia-Customies
+version: 1.0.0
+api: 5.0.0
+main: olympia\Customies
+authors:
+  - JustTim
+  - Tezuls
+  - ArkaniaGroups
+website: https://arkaniastudios.com
+depend:
+  - Customies
