@@ -7,7 +7,7 @@ use olympia\blocks\ChunkBuster;
 use olympia\items\ItemUtils;
 
 // Key
-use olympia\items\key\CosmetiqueKey;
+use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
 use olympia\items\key\EventKey;
 use olympia\items\key\ItemKey;
@@ -37,7 +37,7 @@ class Register {
         $i->register(MineKey::class, "mine_key", "Clé Mine");
         $i->register(ItemKey::class, "item_key", "Clé Item");
         $i->register(StoreKey::class, "store_key", "Clé Boutique");
-        $i->register(CosmetiqueKey::class, "cosmetique_key", "Clé Cosmétique");
+        $i->register(CosmeticKey::class, "cosmetic_key", "Clé Cosmétique");
         $i->register(EventKey::class, "event_key", "Clé Evenement");
     }
 

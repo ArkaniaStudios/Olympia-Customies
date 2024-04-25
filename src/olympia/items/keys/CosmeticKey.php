@@ -11,13 +11,13 @@ use pocketmine\item\Item;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\math\Vector3;
 
-class CosmetiqueKey extends Item implements ItemComponents {
+class CosmeticKey extends Item implements ItemComponents {
     use ItemComponentsTrait;
 
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
         parent::__construct($identifier, $name, $enchantmentTags);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
-        $this->initComponent("cosmetique_key", $creative);
+        $this->initComponent("cosmetic_key", $creative);
         $this->addComponent(new HandEquippedComponent());
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->setLore([
