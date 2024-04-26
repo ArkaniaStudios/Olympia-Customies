@@ -3,6 +3,9 @@
 namespace olympia\items;
 
 use customiesdevs\customies\item\CustomiesItemFactory;
+use olympia\items\armors\mythril\MythrilChestplate;
+use olympia\items\armors\mythril\MythrilHelmet;
+use olympia\items\armors\mythril\MythrilLeggings;
 use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
 use olympia\items\key\EventKey;
@@ -10,6 +13,7 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
+use olympia\items\armors\mythril\MythrilBoots;
 use olympia\items\mythril\MythrilSickle;
 use pocketmine\item\Item;
 use pocketmine\utils\CloningRegistryTrait;
@@ -17,6 +21,12 @@ use pocketmine\utils\CloningRegistryTrait;
 /**
  * MYTHRIL TOOLS :
  * @method static MythrilSickle MYTHRIL_SICKLE()
+ *
+ * MYTHRIL ARMORS :
+ * @method static MythrilBoots MYTHRIL_BOOTS()
+ * @method static MythrilLeggings MYTHRIL_LEGGINGS()
+ * @method static MythrilChestplate MYTHRIL_CHESTPLATE()
+ * @method static MythrilHelmet MYTHRIL_HELMET()
  *
  * SPECIAL :
  * @method static InfinitySword INFINITY_SWORD()
@@ -40,6 +50,7 @@ final class OlympiaItems {
         self::setupTools();
         self::setupArmors();
         self::setupKey();
+        self::setupArmors();
     }
 
     private static function setupTools(): void {
@@ -47,7 +58,16 @@ final class OlympiaItems {
         self::_registryRegister("mythril_sickle", self::get("mythril_sickle"));
 
         /* SPECIAL */
-        self::_registryRegister("infinite_sword", self::get("infinite_sword"));
+        // self::_registryRegister("infinite_sword", self::get("infinite_sword"));
+    }
+
+    private static function setupArmors(): void {
+        /* MYTHRIL */
+        self::_registryRegister("mythril_boots", self::get("mythril_boots"));
+        self::_registryRegister("mythril_leggings", self::get("mythril_leggings"));
+        self::_registryRegister("mythril_chestplate", self::get("mythril_chestplate"));
+        self::_registryRegister("mythril_helmet", self::get("mythril_helmet"));
+
     }
 
     private static function setupKey(): void {
@@ -59,8 +79,6 @@ final class OlympiaItems {
         self::_registryRegister("store_key", self::get("store_key"));
         self::_registryRegister("vote_key", self::get("vote_key"));
     }
-
-    private static function setupArmors(): void {}
 
     private static function get($identifier): Item {
         return CustomiesItemFactory::getInstance()->get(self::PREFIX . $identifier);

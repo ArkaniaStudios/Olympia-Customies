@@ -4,6 +4,10 @@ namespace olympia;
 
 use olympia\blocks\BlockUtils;
 use olympia\blocks\ChunkBuster;
+use olympia\items\armors\mythril\MythrilBoots;
+use olympia\items\armors\mythril\MythrilChestplate;
+use olympia\items\armors\mythril\MythrilHelmet;
+use olympia\items\armors\mythril\MythrilLeggings;
 use olympia\items\InfinitySword;
 use olympia\items\ItemUtils;
 
@@ -32,6 +36,12 @@ class Register {
         /* MYTHRIL */
         $i->register(MythrilSickle::class, "mythril_sickle", "Faucille en mythril");
 
+        /* ARMOR */
+        $i->register(MythrilBoots::class, "mythril_boots", "Bottes en mythril");
+        $i->register(MythrilLeggings::class, "mythril_leggings", "Jambières en mythril");
+        $i->register(MythrilChestplate::class, "mythril_chestplate", "Plastron en mythril");
+        $i->register(MythrilHelmet::class, "mythril_helmet", "Casque en mythril");
+
         /* KEY */
         $i->register(VoteKey::class, "vote_key", "Clé Vote");
         $i->register(EpicKey::class, "epic_key", "Clé Epic");
@@ -42,7 +52,7 @@ class Register {
         $i->register(EventKey::class, "event_key", "Clé Evenement");
 
         /* SPECIAL */
-        $i->register(InfinitySword::class, "infinite_sword", "Epée de l'infinie");
+        // $i->register(InfinitySword::class, "infinite_sword", "Epée de l'infinie");
     }
 
     private static function block(): void {
