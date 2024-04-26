@@ -18,6 +18,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * MYTHRIL TOOLS :
  * @method static MythrilSickle MYTHRIL_SICKLE()
  *
+ * SPECIAL :
+ * @method static InfinitySword INFINITY_SWORD()
+ *
  * KEY :
  * @method static CosmeticKey COSMETIC_KEY()
  * @method static EpicKey EPIC_KEY()
