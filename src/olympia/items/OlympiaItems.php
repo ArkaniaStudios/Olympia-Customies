@@ -11,6 +11,7 @@ use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\mythril\MythrilSickle;
+use pocketmine\item\Item;
 use pocketmine\utils\CloningRegistryTrait;
 
 /**
@@ -40,18 +41,25 @@ final class OlympiaItems {
 
     private static function setupTools(): void {
         /* MYTHRIL TOOLS */
-        self::_registryRegister("mythril_sickle", CustomiesItemFactory::getInstance()->get(self::PREFIX . "mythril_sickle"));
+        self::_registryRegister("mythril_sickle", self::get("mythril_sickle"));
+
+        /* SPECIAL */
+        self::_registryRegister("infinite_sword", self::get("infinite_sword"));
     }
 
     private static function setupKey(): void {
-        self::_registryRegister("cosmetic_key", CustomiesItemFactory::getInstance()->get(self::PREFIX . "cosmetic_key"));
-        self::_registryRegister("epic_key", CustomiesItemFactory::getInstance()->get(self::PREFIX . "epic_key"));
-        self::_registryRegister("event_key", CustomiesItemFactory::getInstance()->get(self::PREFIX . "event_key"));
-        self::_registryRegister("item_key", CustomiesItemFactory::getInstance()->get(self::PREFIX . "item_key"));
-        self::_registryRegister("mine_key", CustomiesItemFactory::getInstance()->get(self::PREFIX . "mine_key"));
-        self::_registryRegister("store_key", CustomiesItemFactory::getInstance()->get(self::PREFIX . "store_key"));
-        self::_registryRegister("vote_key", CustomiesItemFactory::getInstance()->get(self::PREFIX . "vote_key"));
+        self::_registryRegister("cosmetic_key", self::get("cosmetic_key"));
+        self::_registryRegister("epic_key", self::get("epic_key"));
+        self::_registryRegister("event_key", self::get("event_key"));
+        self::_registryRegister("item_key", self::get("item_key"));
+        self::_registryRegister("mine_key", self::get("mine_key"));
+        self::_registryRegister("store_key", self::get("store_key"));
+        self::_registryRegister("vote_key", self::get("vote_key"));
     }
 
     private static function setupArmors(): void {}
+
+    private static function get($identifier): Item {
+        return CustomiesItemFactory::getInstance()->get(self::PREFIX . $identifier);
+    }
 }

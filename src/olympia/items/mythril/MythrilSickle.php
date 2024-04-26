@@ -9,7 +9,7 @@ use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
 use olympia\items\Sickle;
 use pocketmine\block\Block;
-use pocketmine\block\BlockTypeIds;
+use pocketmine\block\VanillaBlocks;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\ItemUseResult;
 use pocketmine\math\Vector3;
@@ -28,22 +28,26 @@ class MythrilSickle extends Sickle implements ItemComponents {
 
     public function onInteractBlock(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, array &$returnedItems): ItemUseResult {
         $this->setRadius(3);
-        $xPos = $blockClicked->getPosition()->x;
-        $zPos = $blockClicked->getPosition()->z;
+        $pos = $blockClicked->getPosition();
+        $world = $pos->getWorld();
+        $offset = [
+            [1, 0, 0],
+            [-1, 0, 0],
+            [0, 0, 1],
+            [0, 0, -1],
+            [1, 0, 1],
+            [1, 0, -1],
+            [-1, 0, -1],
+            [-1, 0, 1]
+        ];
 
-        if ($blockClicked->getTypeId() === BlockTypeIds::FARMLAND) {
-            $maxX = $xPos + $this->getRadius();
-            $maxZ = $zPos + $this->getRadius();
-            $minX = $xPos - $this->getRadius();
-            $minZ = $zPos - $this->getRadius();
-
-            for ($x = $minX; $x <= $maxX; $x++) {
-                for ($z = $minZ; $z <= $maxZ; $z++) {
-
-                }
+        foreach ($offset as $offsets) {
+            $newPos = $pos->add($offsets[0], $offsets[1], $offsets[2]);
+            if (in_array($world->getBlock($newPos)->getTypeId(), [VanillaBlocks::GRASS()->getTypeId(), VanillaBlocks::DIRT()->getTypeId()])) {
+                $world->setBlock($newPos, VanillaBlocks::FARMLAND());
             }
         }
 
-        return parent::onInteractBlock($player, $blockReplace, $blockClicked, $face, $clickVector, $returnedItems);
+        return ItemUseResult::SUCCESS();
     }
 }

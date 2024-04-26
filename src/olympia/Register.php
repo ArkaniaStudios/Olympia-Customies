@@ -4,6 +4,7 @@ namespace olympia;
 
 use olympia\blocks\BlockUtils;
 use olympia\blocks\ChunkBuster;
+use olympia\items\InfinitySword;
 use olympia\items\ItemUtils;
 
 // Key
@@ -39,6 +40,9 @@ class Register {
         $i->register(StoreKey::class, "store_key", "Clé Boutique");
         $i->register(CosmeticKey::class, "cosmetic_key", "Clé Cosmétique");
         $i->register(EventKey::class, "event_key", "Clé Evenement");
+
+        /* SPECIAL */
+        $i->register(InfinitySword::class, "infinite_sword", "Epée de l'infinie");
     }
 
     private static function block(): void {
