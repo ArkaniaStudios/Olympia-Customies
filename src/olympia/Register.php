@@ -8,6 +8,10 @@ use olympia\items\armors\mythril\MythrilBoots;
 use olympia\items\armors\mythril\MythrilChestplate;
 use olympia\items\armors\mythril\MythrilHelmet;
 use olympia\items\armors\mythril\MythrilLeggings;
+use olympia\items\armors\orichalque\OrichalqueBoots;
+use olympia\items\armors\orichalque\OrichalqueChestplate;
+use olympia\items\armors\orichalque\OrichalqueHelmet;
+use olympia\items\armors\orichalque\OrichalqueLeggings;
 use olympia\items\InfinitySword;
 use olympia\items\ItemUtils;
 
@@ -37,10 +41,16 @@ class Register {
         $i->register(MythrilSickle::class, "mythril_sickle", "Faucille en mythril");
 
         /* ARMOR */
+
         $i->register(MythrilBoots::class, "mythril_boots", "Bottes en mythril");
         $i->register(MythrilLeggings::class, "mythril_leggings", "Jambières en mythril");
         $i->register(MythrilChestplate::class, "mythril_chestplate", "Plastron en mythril");
         $i->register(MythrilHelmet::class, "mythril_helmet", "Casque en mythril");
+
+        $i->register(OrichalqueBoots::class, "orichalque_boots", "Bottes en orichalque");
+        $i->register(OrichalqueLeggings::class, "orichalque_leggings", "Jambières en orichalque");
+        $i->register(OrichalqueChestplate::class, "orichalque_chestplate", "Plastron en orichalque");
+        $i->register(OrichalqueHelmet::class, "orichalque_helmet", "Casque en orichalque");
 
         /* KEY */
         $i->register(VoteKey::class, "vote_key", "Clé Vote");

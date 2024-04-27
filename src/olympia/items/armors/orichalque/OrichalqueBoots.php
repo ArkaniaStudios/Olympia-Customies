@@ -1,6 +1,6 @@
 <?php
 
-namespace olympia\items\armors\mythril;
+namespace olympia\items\armors\orichalque;
 
 use customiesdevs\customies\item\component\ArmorComponent;
 use customiesdevs\customies\item\component\DurabilityComponent;
@@ -14,21 +14,21 @@ use pocketmine\item\Armor;
 use pocketmine\item\ArmorTypeInfo;
 use pocketmine\item\ItemIdentifier;
 
-class MythrilBoots extends Armor implements ItemComponents {
+class OrichalqueBoots extends Armor implements ItemComponents {
     use ItemComponentsTrait;
 
     public function __construct(ItemIdentifier $identifier, string $name) {
         parent::__construct($identifier, $name, new ArmorTypeInfo(6, 992, ArmorInventory::SLOT_FEET));
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_EQUIPMENT, CreativeInventoryInfo::GROUP_BOOTS);
-        $this->initComponent("mythril_boots", $creative);
+        $this->initComponent("orichalque_boots", $creative);
         $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_FEET));
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
         $this->setupRenderOffsets(16, 16, false);
         $this->setLore([
-            "§rCes bottes en mythril sont plus §epuissantes §rque le",
-            "§ediamant§r, néanmoins elles ne sont pas les puissantes !",
+            "§rCes bottes en orichalque sont plus §epuissantes §rque le",
+            "§emythril§r, néanmoins elles ne sont pas les puissantes !",
         ]);
     }
 

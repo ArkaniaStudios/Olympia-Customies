@@ -3,9 +3,15 @@
 namespace olympia\items;
 
 use customiesdevs\customies\item\CustomiesItemFactory;
+
+use olympia\items\armors\mythril\MythrilBoots;
 use olympia\items\armors\mythril\MythrilChestplate;
 use olympia\items\armors\mythril\MythrilHelmet;
 use olympia\items\armors\mythril\MythrilLeggings;
+use olympia\items\armors\orichalque\OrichalqueBoots;
+use olympia\items\armors\orichalque\OrichalqueChestplate;
+use olympia\items\armors\orichalque\OrichalqueHelmet;
+use olympia\items\armors\orichalque\OrichalqueLeggings;
 use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
 use olympia\items\key\EventKey;
@@ -13,7 +19,6 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
-use olympia\items\armors\mythril\MythrilBoots;
 use olympia\items\mythril\MythrilSickle;
 use pocketmine\item\Item;
 use pocketmine\utils\CloningRegistryTrait;
@@ -23,6 +28,11 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static MythrilSickle MYTHRIL_SICKLE()
  *
  * MYTHRIL ARMORS :
+ * @method static OrichalqueBoots ORICHALQUE_BOOTS()
+ * @method static OrichalqueLeggings ORICHALQUE_LEGGINGS()
+ * @method static OrichalqueChestplate ORICHALQUE_CHESTPLATE()
+ * @method static OrichalqueHelmet ORICHALQUE_HELMET()
+ *
  * @method static MythrilBoots MYTHRIL_BOOTS()
  * @method static MythrilLeggings MYTHRIL_LEGGINGS()
  * @method static MythrilChestplate MYTHRIL_CHESTPLATE()
@@ -67,6 +77,12 @@ final class OlympiaItems {
         self::_registryRegister("mythril_leggings", self::get("mythril_leggings"));
         self::_registryRegister("mythril_chestplate", self::get("mythril_chestplate"));
         self::_registryRegister("mythril_helmet", self::get("mythril_helmet"));
+
+        /* ORICHALQUE */
+        self::_registryRegister("orichalque_boots", self::get("orichalque_boots"));
+        self::_registryRegister("orichalque_leggings", self::get("orichalque_leggings"));
+        self::_registryRegister("orichalque_chestplate", self::get("orichalque_chestplate"));
+        self::_registryRegister("orichalque_helmet", self::get("orichalque_helmet"));
 
     }
 
