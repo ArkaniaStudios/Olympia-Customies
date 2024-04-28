@@ -12,10 +12,7 @@ use olympia\items\armors\orichalque\OrichalqueBoots;
 use olympia\items\armors\orichalque\OrichalqueChestplate;
 use olympia\items\armors\orichalque\OrichalqueHelmet;
 use olympia\items\armors\orichalque\OrichalqueLeggings;
-use olympia\items\InfinitySword;
 use olympia\items\ItemUtils;
-
-// Key
 use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
 use olympia\items\key\EventKey;
@@ -23,9 +20,8 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
-
-// Mythril
-use olympia\items\mythril\MythrilSickle;
+use olympia\items\tools\InfinitySword;
+use olympia\items\tools\mythril\MythrilSickle;
 
 class Register {
 
@@ -62,7 +58,7 @@ class Register {
         $i->register(EventKey::class, "event_key", "Clé Evenement");
 
         /* SPECIAL */
-        // $i->register(InfinitySword::class, "infinite_sword", "Epée de l'infinie");
+        $i->register(InfinitySword::class, "infinite_sword", "Epée de l'infinie");
     }
 
     private static function block(): void {

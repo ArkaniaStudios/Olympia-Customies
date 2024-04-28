@@ -3,7 +3,6 @@
 namespace olympia\items;
 
 use customiesdevs\customies\item\CustomiesItemFactory;
-
 use olympia\items\armors\mythril\MythrilBoots;
 use olympia\items\armors\mythril\MythrilChestplate;
 use olympia\items\armors\mythril\MythrilHelmet;
@@ -19,7 +18,8 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
-use olympia\items\mythril\MythrilSickle;
+use olympia\items\tools\InfinitySword;
+use olympia\items\tools\mythril\MythrilSickle;
 use pocketmine\item\Item;
 use pocketmine\utils\CloningRegistryTrait;
 
@@ -68,7 +68,7 @@ final class OlympiaItems {
         self::_registryRegister("mythril_sickle", self::get("mythril_sickle"));
 
         /* SPECIAL */
-        // self::_registryRegister("infinite_sword", self::get("infinite_sword"));
+        self::_registryRegister("infinite_sword", self::get("infinite_sword"));
     }
 
     private static function setupArmors(): void {
