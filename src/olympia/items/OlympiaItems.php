@@ -60,7 +60,6 @@ final class OlympiaItems {
         self::setupTools();
         self::setupArmors();
         self::setupKey();
-        self::setupArmors();
     }
 
     private static function setupTools(): void {
@@ -68,7 +67,7 @@ final class OlympiaItems {
         self::_registryRegister("mythril_sickle", self::get("mythril_sickle"));
 
         /* SPECIAL */
-        self::_registryRegister("infinite_sword", self::get("infinite_sword"));
+        self::_registryRegister("infinity_sword", self::get("infinity_sword"));
     }
 
     private static function setupArmors(): void {

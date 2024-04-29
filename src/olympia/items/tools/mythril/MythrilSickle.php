@@ -22,7 +22,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
         parent::__construct($identifier, $name, $enchantmentTags);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
-        $this->initComponent("diamond_hoe", $creative);
+        $this->initComponent("mythril_sickle", $creative);
         $this->addComponent(new HandEquippedComponent());
         $this->addComponent(new MaxStackSizeComponent(1));
     }

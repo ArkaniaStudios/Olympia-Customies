@@ -58,7 +58,7 @@ class Register {
         $i->register(EventKey::class, "event_key", "Clé Evenement");
 
         /* SPECIAL */
-        $i->register(InfinitySword::class, "infinite_sword", "Epée de l'infinie");
+        $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");
     }
 
     private static function block(): void {
