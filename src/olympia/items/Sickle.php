@@ -3,6 +3,7 @@
 namespace olympia\items;
 
 use pocketmine\item\Item;
+use pocketmine\math\Vector3;
 
 class Sickle extends Item {
     private int $radius;
@@ -11,15 +12,15 @@ class Sickle extends Item {
         $this->radius = $radius;
         
         return [
-            [$y, $y, $y],
-            [$radius, $y, $y],
-            [-$radius, $y, $y],
-            [$y, $y, $radius],
-            [$y, $y, -$radius],
-            [$radius, $y, $radius],
-            [$radius, $y, -$radius],
-            [-$radius, $y, -$radius],
-            [-$radius, $y, $radius]
+            new Vector3($y, $y, $y),
+            new Vector3($radius, $y, $y),
+            new Vector3(-$radius, $y, $y),
+            new Vector3($y, $y, $radius),
+            new Vector3($y, $y, -$radius),
+            new Vector3($radius, $y, $radius),
+            new Vector3($radius, $y, -$radius),
+            new Vector3(-$radius, $y, -$radius),
+            new Vector3(-$radius, $y, $radius)
         ];
     }
 

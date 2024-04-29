@@ -61,7 +61,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
         ];
 
         foreach ($offset as $offsets) {
-            $offsetsPos = $pos->add($offsets[0], $offsets[1], $offsets[2]);
+            $offsetsPos = $pos->add($this->getRadius(), $offsets[1], $offsets[2]);
             if (in_array($world->getBlock($offsetsPos)->getTypeId(), [VanillaBlocks::GRASS()->getTypeId(), VanillaBlocks::DIRT()->getTypeId()])) {
                 $world->setBlock($offsetsPos, VanillaBlocks::FARMLAND());
             }
@@ -74,6 +74,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
                 foreach ($inv->getContents() as $item) {
                     if (array_key_exists($item->getTypeId(), $seed)) {
                         $world->setBlock($cropsPos, $seed[$item->getTypeId()]);
+                        $inv->remove($item);
                     }
                 }
             }
