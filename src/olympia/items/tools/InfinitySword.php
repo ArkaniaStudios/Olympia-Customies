@@ -13,13 +13,11 @@ use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\Sword;
 use pocketmine\item\ToolTier;
-use pocketmine\utils\Config;
 
 class InfinitySword extends Sword implements ItemComponents {
     use ItemComponentsTrait;
 
     private int $kill;
-    public Config $cfg;
 
     public function __construct(ItemIdentifier $identifier, string $name) {
         parent::__construct($identifier, $name, ToolTier::DIAMOND());
@@ -27,8 +25,8 @@ class InfinitySword extends Sword implements ItemComponents {
         $this->initComponent("infinity_sword", $creative);
         $this->addComponent(new DurabilityComponent($this->getMaxDurability()));
         $this->addComponent(new DamageComponent($this->getAttackPoints()));
-        $nbt = $this->getNamedTag();
-        $this->kill = $nbt->getInt("kills", 0);
+        $this->getNamedTag()->setInt("kills", 0);
+        $this->setLore(["§rL'épée de l'infinie a {$this->getKillCount()} kills"]);
     }
 
     public function getAttackPoints(): int {
@@ -44,10 +42,8 @@ class InfinitySword extends Sword implements ItemComponents {
     }
 
     public function updateKill(): self {
-        $this->kill += 1;
-        $nbt = $this->getNamedTag();
-        $nbt->setInt("kills", $this->kill);
-        $this->setNamedTag($nbt);
+        $kill = $this->getNamedTag()->getInt("kills");
+        $this->getNamedTag()->setInt("kills", $kill + 1);
 
         $enchantments = [
             10 => 1,
@@ -70,6 +66,6 @@ class InfinitySword extends Sword implements ItemComponents {
     }
 
     public function getKillCount(): int {
-        return $this->kill;
+        return $this->getNamedTag()->getInt("kills");
     }
 }
