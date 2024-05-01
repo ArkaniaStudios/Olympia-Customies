@@ -21,28 +21,32 @@ class BlockUtils {
         string $name,
         string $identifier,
         string $texture,
-        int $ghost = 0,
-        string $geometry = "geometry.basic",
+        int $solid = Model::SOLID,
+        string $geometry = "geometry.block",
         $category = CreativeInventoryInfo::CATEGORY_ALL,
         $group = CreativeInventoryInfo::NONE
     ): void {
-        $id = BlockTypeIds::newId();
-        CustomiesBlockFactory::getInstance()->registerBlock(
-            static fn() => new $class(
-                new BlockIdentifier($id),
-                $name,
-                new BlockTypeInfo(new BlockBreakInfo(1))
-            ),
-            "olympia:" . $identifier,
-            new Model([new Material(
-                Material::TARGET_ALL,
-                $texture,
-                Material::RENDER_METHOD_ALPHA_TEST
-            )],
+        $material = new Material(
+            Material::TARGET_ALL,
+            $texture,
+            Material::RENDER_METHOD_ALPHA_TEST
+        );
+        $creative = new CreativeInventoryInfo(
+            $category,
+            $group
+        );
+        $model = new Model(
+            [$material],
             $geometry,
             new Vector3(-8, 0, -8),
-            new Vector3(16, 16, 16)),
-            new CreativeInventoryInfo($category, $group)
+            new Vector3(16, 16, 16),
+            $solid
+        );
+        CustomiesBlockFactory::getInstance()->registerBlock(
+            static fn () => $class(),
+            "olympia:" . $identifier,
+            $model,
+            $creative
         );
     }
 }

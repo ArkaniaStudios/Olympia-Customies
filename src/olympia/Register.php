@@ -100,6 +100,6 @@ class Register {
 
     private static function block(): void {
         $b = BlockUtils::getInstance();
-        $b->register(ChunkBuster::class, "Chunk buster", "chunkbuster", "chunk_buster");
+        $b->register(new ChunkBuster(), "Chunk buster", "chunk_buster", "chunk_buster");
     }
 }
