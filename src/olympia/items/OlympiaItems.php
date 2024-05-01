@@ -3,6 +3,14 @@
 namespace olympia\items;
 
 use customiesdevs\customies\item\CustomiesItemFactory;
+use olympia\items\armors\cronos\CronosBoots;
+use olympia\items\armors\cronos\CronosChestplate;
+use olympia\items\armors\cronos\CronosHelmet;
+use olympia\items\armors\cronos\CronosLeggings;
+use olympia\items\armors\farm\FarmBoots;
+use olympia\items\armors\farm\FarmChestplate;
+use olympia\items\armors\farm\FarmHelmet;
+use olympia\items\armors\farm\FarmLeggings;
 use olympia\items\armors\mythril\MythrilBoots;
 use olympia\items\armors\mythril\MythrilChestplate;
 use olympia\items\armors\mythril\MythrilHelmet;
@@ -11,6 +19,10 @@ use olympia\items\armors\orichalque\OrichalqueBoots;
 use olympia\items\armors\orichalque\OrichalqueChestplate;
 use olympia\items\armors\orichalque\OrichalqueHelmet;
 use olympia\items\armors\orichalque\OrichalqueLeggings;
+use olympia\items\armors\theia\TheiaBoots;
+use olympia\items\armors\theia\TheiaChestplate;
+use olympia\items\armors\theia\TheiaHelmet;
+use olympia\items\armors\theia\TheiaLeggings;
 use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
 use olympia\items\key\EventKey;
@@ -27,16 +39,35 @@ use pocketmine\utils\CloningRegistryTrait;
  * MYTHRIL TOOLS :
  * @method static MythrilSickle MYTHRIL_SICKLE()
  *
- * MYTHRIL ARMORS :
+ * ORICHALQUE ARMORS :
  * @method static OrichalqueBoots ORICHALQUE_BOOTS()
  * @method static OrichalqueLeggings ORICHALQUE_LEGGINGS()
  * @method static OrichalqueChestplate ORICHALQUE_CHESTPLATE()
  * @method static OrichalqueHelmet ORICHALQUE_HELMET()
  *
+ * MYTHRIL ARMORS :
  * @method static MythrilBoots MYTHRIL_BOOTS()
  * @method static MythrilLeggings MYTHRIL_LEGGINGS()
  * @method static MythrilChestplate MYTHRIL_CHESTPLATE()
  * @method static MythrilHelmet MYTHRIL_HELMET()
+ *
+ * CRONOS ARMORS :
+ * @method static CronosBoots CRONOS_BOOTS()
+ * @method static CronosLeggings CRONOS_LEGGINGS()
+ * @method static CronosChestplate CRONOS_CHESTPLATE()
+ * @method static CronosHelmet CRONOS_HELMET()
+ *
+ * THEIA ARMORS :
+ * @method static TheiaBoots THEIA_BOOTS()
+ * @method static TheiaLeggings THEIA_LEGGINGS()
+ * @method static TheiaChestplate THEIA_CHESTPLATE()
+ * @method static TheiaHelmet THEIA_HELMET()
+ *
+ * FARM ARMORS :
+ * @method static FarmBoots FARM_BOOTS()
+ * @method static FarmLeggings FARM_LEGGINGS()
+ * @method static FarmChestplate FARM_CHESTPLATE()
+ * @method static FarmHelmet FARM_HELMET()
  *
  * SPECIAL :
  * @method static InfinitySword INFINITY_SWORD()
@@ -82,6 +113,24 @@ final class OlympiaItems {
         self::_registryRegister("orichalque_leggings", self::get("orichalque_leggings"));
         self::_registryRegister("orichalque_chestplate", self::get("orichalque_chestplate"));
         self::_registryRegister("orichalque_helmet", self::get("orichalque_helmet"));
+
+        /* THEIA */
+        self::_registryRegister("theia_boots", self::get("theia_boots"));
+        self::_registryRegister("theia_leggings", self::get("theia_leggings"));
+        self::_registryRegister("theia_chestplate", self::get("theia_chestplate"));
+        self::_registryRegister("theia_helmet", self::get("theia_helmet"));
+
+        /* CRONOS */
+        self::_registryRegister("cronos_boots", self::get("cronos_boots"));
+        self::_registryRegister("cronos_leggings", self::get("cronos_leggings"));
+        self::_registryRegister("cronos_chestplate", self::get("cronos_chestplate"));
+        self::_registryRegister("cronos_helmet", self::get("cronos_helmet"));
+
+        /* FARM */
+        self::_registryRegister("farm_boots", self::get("farm_boots"));
+        self::_registryRegister("farm_leggings", self::get("farm_leggings"));
+        self::_registryRegister("farm_chestplate", self::get("farm_chestplate"));
+        self::_registryRegister("farm_helmet", self::get("farm_helmet"));
 
     }
 

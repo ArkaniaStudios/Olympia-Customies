@@ -15,6 +15,7 @@ use pocketmine\item\ItemUseResult;
 use pocketmine\item\VanillaItems;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
+use pocketmine\world\sound\AmethystBlockChimeSound;
 
 class MythrilSickle extends Sickle implements ItemComponents {
     use ItemComponentsTrait;
@@ -25,6 +26,10 @@ class MythrilSickle extends Sickle implements ItemComponents {
         $this->initComponent("mythril_sickle", $creative);
         $this->addComponent(new HandEquippedComponent());
         $this->addComponent(new MaxStackSizeComponent(1));
+        $this->setLore([
+            "§rLa faucille en §emythril §rpermet de",
+            "§rlabourer la terre en §e3x3",
+        ]);
     }
 
     public function onInteractBlock(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, array &$returnedItems): ItemUseResult {
@@ -64,6 +69,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
             $offsetsPos = $pos->add($this->getRadius(), $offsets[1], $offsets[2]);
             if (in_array($world->getBlock($offsetsPos)->getTypeId(), [VanillaBlocks::GRASS()->getTypeId(), VanillaBlocks::DIRT()->getTypeId()])) {
                 $world->setBlock($offsetsPos, VanillaBlocks::FARMLAND());
+                $player->broadcastSound(new AmethystBlockChimeSound());
             }
         }
 
@@ -75,6 +81,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
                     if (array_key_exists($item->getTypeId(), $seed)) {
                         $world->setBlock($cropsPos, $seed[$item->getTypeId()]);
                         $inv->remove($item);
+                        $player->broadcastSound(new AmethystBlockChimeSound());
                     }
                 }
             }

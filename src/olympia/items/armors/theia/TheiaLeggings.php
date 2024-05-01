@@ -1,6 +1,6 @@
 <?php
 
-namespace olympia\items\armors\orichalque;
+namespace olympia\items\armors\theia;
 
 use customiesdevs\customies\item\component\ArmorComponent;
 use customiesdevs\customies\item\component\DurabilityComponent;
@@ -14,20 +14,21 @@ use pocketmine\item\Armor;
 use pocketmine\item\ArmorTypeInfo;
 use pocketmine\item\ItemIdentifier;
 
-class OrichalqueHelmet extends Armor implements ItemComponents {
+class TheiaLeggings extends Armor implements ItemComponents {
     use ItemComponentsTrait;
 
     public function __construct(ItemIdentifier $identifier, string $name) {
-        parent::__construct($identifier, $name, new ArmorTypeInfo(6, 992, ArmorInventory::SLOT_HEAD));
-        $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_EQUIPMENT, CreativeInventoryInfo::GROUP_HELMET);
-        $this->initComponent("orichalque_helmet", $creative);
-        $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_HEAD));
+        parent::__construct($identifier, $name, new ArmorTypeInfo(6, 992, ArmorInventory::SLOT_LEGS));
+        $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_EQUIPMENT, CreativeInventoryInfo::GROUP_LEGGINGS);
+        $this->initComponent("theia_leggings", $creative);
+        $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_LEGS));
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
+        $this->setupRenderOffsets(16, 16, false);
         $this->setLore([
-            "§rCe casque en orichalque est plus §epuissant §rque le",
-            "§emythril§r, néanmoins il n'est pas le plus puissant !",
+            "§rCes jambières en theia sont plus §epuissantes §rque le",
+            "§eorichalque§r !",
         ]);
     }
 
