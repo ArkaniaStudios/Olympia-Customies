@@ -32,9 +32,12 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
+use olympia\items\others\SoupItem;
 use olympia\items\partners\FishKnockback;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
+use olympia\items\tools\mythril\MythrilSword;
+use olympia\items\tools\mythril\OrichalqueSword;
 use pocketmine\item\Item;
 use pocketmine\utils\CloningRegistryTrait;
 
@@ -78,6 +81,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * ITEMS :
  * @method static MythrilIngot MYTHRIL_INGOT()
  * @method static OrichalqueIngot ORICHALQUE_INGOT()
+ * @method static SoupItem SOUP_ITEM()
+ * @method static OrichalqueSword ORICHALQUE_SWORD()
+ * @method static MythrilSword MYTHRIL_SWORD()
  *
  * KEY :
  * @method static CosmeticKey COSMETIC_KEY()
@@ -106,6 +112,8 @@ final class OlympiaItems {
         self::_registryRegister("mythril_ingot", self::get("mythril_ingot"));
         self::_registryRegister("orichalque_ingot", self::get("orichalque_ingot"));
         self::_registryRegister("soup_item", self::get("soup_item"));
+        self::_registryRegister("orichalque_sword", self::get("orichalque_sword"));
+        self::_registryRegister("mythril_sword", self::get("mythril_sword"));
     }
 
     private static function setupTools(): void {
