@@ -66,7 +66,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
         ];
 
         foreach ($offset as $offsets) {
-            $offsetsPos = $pos->add($this->getRadius(), $offsets[1], $offsets[2]);
+            $offsetsPos = $pos->add($offsets[0], $offsets[1], $offsets[2]);
             if (in_array($world->getBlock($offsetsPos)->getTypeId(), [VanillaBlocks::GRASS()->getTypeId(), VanillaBlocks::DIRT()->getTypeId()])) {
                 $world->setBlock($offsetsPos, VanillaBlocks::FARMLAND());
                 $player->broadcastSound(new AmethystBlockChimeSound());
