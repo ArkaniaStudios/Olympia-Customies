@@ -30,6 +30,7 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
+use olympia\items\partners\FishKnockback;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
 use pocketmine\item\Item;
@@ -80,6 +81,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static MineKey MINE_KEY()
  * @method static StoreKey STORE_KEY()
  * @method static VoteKey VOTE_KEY()
+ *
+ * PARTNERS :
+ * @method static FishKnockback FISH_KNOCKBACK()
  */
 
 final class OlympiaItems {
@@ -91,6 +95,7 @@ final class OlympiaItems {
         self::setupTools();
         self::setupArmors();
         self::setupKey();
+        self::setupPartners();
     }
 
     private static function setupTools(): void {
@@ -142,6 +147,10 @@ final class OlympiaItems {
         self::_registryRegister("mine_key", self::get("mine_key"));
         self::_registryRegister("store_key", self::get("store_key"));
         self::_registryRegister("vote_key", self::get("vote_key"));
+    }
+
+    private static function setupPartners(): void {
+        self::_registryRegister("fish_knockback", self::get("fish_knockback"));
     }
 
     private static function get($identifier): Item {

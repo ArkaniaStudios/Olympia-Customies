@@ -7,7 +7,6 @@ use customiesdevs\customies\item\component\DurabilityComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
-use olympia\Customies;
 use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\item\ItemIdentifier;
@@ -23,8 +22,8 @@ class InfinitySword extends Sword implements ItemComponents {
 
     public function __construct(ItemIdentifier $identifier, string $name) {
         parent::__construct($identifier, $name, ToolTier::DIAMOND());
-        $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
-        $this->initComponent("diamond_sword", $creative);
+        $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_EQUIPMENT, CreativeInventoryInfo::GROUP_SWORD);
+        $this->initComponent("infinity_sword", $creative);
         $this->addComponent(new DurabilityComponent($this->getMaxDurability()));
         $this->addComponent(new DamageComponent($this->getAttackPoints()));
         $nbt = $this->getNamedTag();

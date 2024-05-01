@@ -32,6 +32,7 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
+use olympia\items\partners\FishKnockback;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
 
@@ -86,6 +87,9 @@ class Register {
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");
+
+        /* PARTNERS */
+        $i->register(FishKnockback::class, "fish_knockback", "Poisson knockback");
     }
 
     private static function block(): void {
