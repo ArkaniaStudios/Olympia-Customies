@@ -2,6 +2,8 @@
 
 namespace olympia;
 
+use customiesdevs\customies\block\Model;
+use customiesdevs\customies\item\CreativeInventoryInfo;
 use olympia\blocks\BlockUtils;
 use olympia\blocks\ChunkBuster;
 use olympia\items\armors\cronos\CronosBoots;
@@ -102,6 +104,6 @@ class Register {
 
     private static function block(): void {
         $b = BlockUtils::getInstance();
-        //$b->register(new ChunkBuster(), "Chunk buster", "chunk_buster", "chunk_buster");
+        $b->register(ChunkBuster::class, "chunk_buster", "chunk_buster", Model::NOT_SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
     }
 }
