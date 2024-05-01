@@ -20,9 +20,7 @@ class PlayerDeath implements Listener {
                 $inv = $damager->getInventory();
                 $item = $inv->getItemInHand();
                 if ($item instanceof InfinitySword) {
-                    $item->updateKill();
-                    $item->setLore(["§rL'épée de l'infinie a {$item->getKillCount()} kills"]);
-                    $inv->setItem($inv->getHeldItemIndex(), $item);
+                    $inv->setItem($inv->getHeldItemIndex(), $item->updateKill());
                 }
             }
         }

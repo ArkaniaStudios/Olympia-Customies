@@ -2,10 +2,11 @@
 
 namespace olympia\items\tools;
 
+use customiesdevs\customies\item\component\DamageComponent;
+use customiesdevs\customies\item\component\DurabilityComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
-use pocketmine\item\enchantment\Enchantment;
 use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\item\ItemIdentifier;
@@ -21,12 +22,13 @@ class InfinitySword extends Sword implements ItemComponents {
         parent::__construct($identifier, $name, ToolTier::DIAMOND());
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("diamond_sword", $creative);
+        $this->addComponent(new DurabilityComponent($this->getMaxDurability()));
+        $this->addComponent(new DamageComponent($this->getAttackPoints()));
         $nbt = $this->getNamedTag();
-        $nbt->setInt("kills", $this->kill);
-        $this->setNamedTag($nbt);
+        $this->kill = $nbt->getInt("kills", 0);
     }
 
-    public function getDamage(): int {
+    public function getAttackPoints(): int {
         return 10;
     }
 
@@ -38,8 +40,8 @@ class InfinitySword extends Sword implements ItemComponents {
         return true;
     }
 
-    public function updateKill(): void {
-        $this->kill++;
+    public function updateKill(): self {
+        $this->kill += 1;
         $nbt = $this->getNamedTag();
         $nbt->setInt("kills", $this->kill);
         $this->setNamedTag($nbt);
@@ -58,6 +60,10 @@ class InfinitySword extends Sword implements ItemComponents {
                 break;
             }
         }
+
+        $this->setLore(["§rL'épée de l'infinie a {$this->getKillCount()} kills"]);
+
+        return $this;
     }
 
     public function getKillCount(): int {
