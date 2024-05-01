@@ -27,7 +27,6 @@ class InfinitySword extends Sword implements ItemComponents {
         $this->initComponent("infinity_sword", $creative);
         $this->addComponent(new DurabilityComponent($this->getMaxDurability()));
         $this->addComponent(new DamageComponent($this->getAttackPoints()));
-        $this->setupRenderOffsets(16, 16);
         $nbt = $this->getNamedTag();
         $this->kill = $nbt->getInt("kills", 0);
     }
