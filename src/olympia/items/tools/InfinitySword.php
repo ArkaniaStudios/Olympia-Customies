@@ -8,15 +8,11 @@ use customiesdevs\customies\item\component\HandEquippedComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
-use olympia\Customies;
 use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\Sword;
 use pocketmine\item\ToolTier;
-use pocketmine\world\sound\BellRingSound;
-use pocketmine\world\sound\BucketEmptyWaterSound;
-use pocketmine\world\sound\XpCollectSound;
 
 class InfinitySword extends Sword implements ItemComponents {
     use ItemComponentsTrait;
