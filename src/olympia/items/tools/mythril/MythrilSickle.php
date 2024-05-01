@@ -16,6 +16,7 @@ use pocketmine\item\VanillaItems;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
 use pocketmine\world\sound\BucketEmptyWaterSound;
+use pocketmine\world\sound\FireExtinguishSound;
 
 class MythrilSickle extends Sickle implements ItemComponents {
     use ItemComponentsTrait;
@@ -69,7 +70,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
             $offsetsPos = $pos->add($offsets[0], $offsets[1], $offsets[2]);
             if (in_array($world->getBlock($offsetsPos)->getTypeId(), [VanillaBlocks::GRASS()->getTypeId(), VanillaBlocks::DIRT()->getTypeId()])) {
                 $world->setBlock($offsetsPos, VanillaBlocks::FARMLAND());
-                $player->broadcastSound(new BucketEmptyWaterSound());
+                $player->broadcastSound(new FireExtinguishSound());
             }
         }
 
@@ -80,7 +81,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
                 foreach ($inv->getContents() as $item) {
                     if (array_key_exists($item->getTypeId(), $seed)) {
                         $world->setBlock($cropsPos, $seed[$item->getTypeId()]);
-                        $player->broadcastSound(new BucketEmptyWaterSound());
+                        $player->broadcastSound(new FireExtinguishSound());
                     }
                 }
             }

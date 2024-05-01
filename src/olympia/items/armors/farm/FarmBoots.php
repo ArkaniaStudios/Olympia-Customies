@@ -9,6 +9,7 @@ use customiesdevs\customies\item\component\WearableComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
+use pocketmine\entity\effect\EffectInstance;
 use pocketmine\inventory\ArmorInventory;
 use pocketmine\item\Armor;
 use pocketmine\item\ArmorTypeInfo;

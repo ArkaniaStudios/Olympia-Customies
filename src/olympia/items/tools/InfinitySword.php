@@ -49,7 +49,6 @@ class InfinitySword extends Sword implements ItemComponents {
     public function updateKill(): self {
         $kill = $this->getNamedTag()->getInt("kills");
         $this->getNamedTag()->setInt("kills", $kill + 1);
-        $player->broadcastSound(new XpCollectSound());
 
         $enchantments = [
             10 => 1,
