@@ -23,6 +23,8 @@ use olympia\items\armors\theia\TheiaBoots;
 use olympia\items\armors\theia\TheiaChestplate;
 use olympia\items\armors\theia\TheiaHelmet;
 use olympia\items\armors\theia\TheiaLeggings;
+use olympia\items\ingots\MythrilIngot;
+use olympia\items\ingots\OrichalqueIngot;
 use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
 use olympia\items\key\EventKey;
@@ -72,6 +74,10 @@ use pocketmine\utils\CloningRegistryTrait;
  * SPECIAL :
  * @method static InfinitySword INFINITY_SWORD()
  *
+ * ITEMS :
+ * @method static MythrilIngot MYTHRIL_INGOT()
+ * @method static OrichalqueIngot ORICHALQUE_INGOT()
+ *
  * KEY :
  * @method static CosmeticKey COSMETIC_KEY()
  * @method static EpicKey EPIC_KEY()
@@ -91,6 +97,9 @@ final class OlympiaItems {
         self::setupTools();
         self::setupArmors();
         self::setupKey();
+
+        self::_registryRegister("mythril_ingot", self::get("mythril_ingot"));
+        self::_registryRegister("orichalque_ingot", self::get("orichalque_ingot"));
     }
 
     private static function setupTools(): void {

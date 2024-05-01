@@ -24,9 +24,10 @@ class InfinitySword extends Sword implements ItemComponents {
     public function __construct(ItemIdentifier $identifier, string $name) {
         parent::__construct($identifier, $name, ToolTier::DIAMOND());
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
-        $this->initComponent("diamond_sword", $creative);
+        $this->initComponent("infinity_sword", $creative);
         $this->addComponent(new DurabilityComponent($this->getMaxDurability()));
         $this->addComponent(new DamageComponent($this->getAttackPoints()));
+        $this->setupRenderOffsets(16, 16);
         $nbt = $this->getNamedTag();
         $this->kill = $nbt->getInt("kills", 0);
     }

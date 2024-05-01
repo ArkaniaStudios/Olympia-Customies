@@ -24,6 +24,8 @@ use olympia\items\armors\theia\TheiaBoots;
 use olympia\items\armors\theia\TheiaChestplate;
 use olympia\items\armors\theia\TheiaHelmet;
 use olympia\items\armors\theia\TheiaLeggings;
+use olympia\items\ingots\MythrilIngot;
+use olympia\items\ingots\OrichalqueIngot;
 use olympia\items\ItemUtils;
 use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
@@ -83,6 +85,10 @@ class Register {
         $i->register(StoreKey::class, "store_key", "Clé Boutique");
         $i->register(CosmeticKey::class, "cosmetic_key", "Clé Cosmétique");
         $i->register(EventKey::class, "event_key", "Clé Evenement");
+
+        /* ITEMS */
+        $i->register(MythrilIngot::class, "mythril_ingot", "L'ingot de Mythril");
+        $i->register(OrichalqueIngot::class, "orichalque_ingot", "L'ingot d'Orichalque");
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");
