@@ -105,6 +105,7 @@ final class OlympiaItems {
 
         self::_registryRegister("mythril_ingot", self::get("mythril_ingot"));
         self::_registryRegister("orichalque_ingot", self::get("orichalque_ingot"));
+        self::_registryRegister("soup_item", self::get("soup_item"));
     }
 
     private static function setupTools(): void {

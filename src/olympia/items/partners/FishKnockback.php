@@ -18,5 +18,8 @@ class FishKnockback extends Item implements ItemComponents {
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("fish_knockback", $creative);
         $this->addEnchantment(new EnchantmentInstance(VanillaEnchantments::KNOCKBACK(), 5));
+        $this->setLore([
+            "§rCet objet possède l'enchetement §eKnockback V§r.",
+        ]);
     }
 }

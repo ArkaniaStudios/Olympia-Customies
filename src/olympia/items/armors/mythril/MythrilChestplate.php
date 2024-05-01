@@ -25,7 +25,6 @@ class MythrilChestplate extends Armor implements ItemComponents {
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
-        $this->setupRenderOffsets(16, 16, false);
         $this->setLore([
             "§rCe plastron en mythril est plus §epuissant §rque le",
             "§ediamant§r, néanmoins il n'est pas le plus puissant !",
