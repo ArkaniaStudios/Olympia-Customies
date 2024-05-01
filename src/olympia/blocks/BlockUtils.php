@@ -12,7 +12,15 @@ use pocketmine\utils\SingletonTrait;
 class BlockUtils {
     use SingletonTrait;
 
-    public function register(string $class, string $identifier, string $texture, int $solid = Model::SOLID, string $geometry = "geometry.block", $category = CreativeInventoryInfo::CATEGORY_ALL, $group = CreativeInventoryInfo::NONE): void {
+    public function register(
+        string $class,
+        string $identifier,
+        string $texture,
+        int $solid = Model::SOLID,
+        string $geometry = "geometry.block",
+        $category = CreativeInventoryInfo::CATEGORY_ALL,
+        $group = CreativeInventoryInfo::NONE
+    ): void {
         $material = new Material(Material::TARGET_ALL, $texture, Material::RENDER_METHOD_ALPHA_TEST);
         $creative = new CreativeInventoryInfo($category, $group);
         $model = new Model([$material], $geometry, new Vector3(-8, 0, -8), new Vector3(16, 16, 16), $solid);

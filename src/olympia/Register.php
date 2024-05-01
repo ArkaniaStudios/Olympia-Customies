@@ -104,6 +104,6 @@ class Register {
 
     private static function block(): void {
         $b = BlockUtils::getInstance();
-        $b->register(ChunkBuster::class, "chunk_buster", "chunk_buster", Model::NOT_SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
+        $b->register(ChunkBuster::class, "chunk_buster", "chunk_buster", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
     }
 }
