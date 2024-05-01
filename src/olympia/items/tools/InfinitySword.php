@@ -4,6 +4,7 @@ namespace olympia\items\tools;
 
 use customiesdevs\customies\item\component\DamageComponent;
 use customiesdevs\customies\item\component\DurabilityComponent;
+use customiesdevs\customies\item\component\HandEquippedComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
@@ -13,6 +14,9 @@ use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\Sword;
 use pocketmine\item\ToolTier;
+use pocketmine\world\sound\BellRingSound;
+use pocketmine\world\sound\BucketEmptyWaterSound;
+use pocketmine\world\sound\XpCollectSound;
 
 class InfinitySword extends Sword implements ItemComponents {
     use ItemComponentsTrait;
@@ -26,7 +30,8 @@ class InfinitySword extends Sword implements ItemComponents {
         $this->addComponent(new DurabilityComponent($this->getMaxDurability()));
         $this->addComponent(new DamageComponent($this->getAttackPoints()));
         $this->getNamedTag()->setInt("kills", 0);
-        $this->setLore(["§rL'épée de l'infinie a {$this->getKillCount()} kills"]);
+        $this->setLore(["§rNombre de kill(s): §e{$this->getKillCount()}"]);
+        $this->addComponent(new HandEquippedComponent(true));
     }
 
     public function getAttackPoints(): int {
@@ -44,6 +49,7 @@ class InfinitySword extends Sword implements ItemComponents {
     public function updateKill(): self {
         $kill = $this->getNamedTag()->getInt("kills");
         $this->getNamedTag()->setInt("kills", $kill + 1);
+        $player->broadcastSound(new XpCollectSound());
 
         $enchantments = [
             10 => 1,
@@ -60,7 +66,7 @@ class InfinitySword extends Sword implements ItemComponents {
             }
         }
 
-        $this->setLore(["§rL'épée de l'infinie a {$this->getKillCount()} kills"]);
+        $this->setLore(["§rNombre de kill(s): §e{$this->getKillCount()}"]);
 
         return $this;
     }
