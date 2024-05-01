@@ -25,7 +25,6 @@ class MythrilBoots extends Armor implements ItemComponents {
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
-        $this->setupRenderOffsets(16, 16, false);
         $this->setLore([
             "§rCes bottes en mythril sont plus §epuissantes §rque le",
             "§ediamant§r, néanmoins elles ne sont pas les puissantes !",

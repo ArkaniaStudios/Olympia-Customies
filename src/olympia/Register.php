@@ -34,6 +34,7 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
+use olympia\items\others\SoupItem;
 use olympia\items\partners\FishKnockback;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
@@ -90,6 +91,7 @@ class Register {
         /* ITEMS */
         $i->register(MythrilIngot::class, "mythril_ingot", "L'ingot de Mythril");
         $i->register(OrichalqueIngot::class, "orichalque_ingot", "L'ingot d'Orichalque");
+        $i->register(SoupItem::class, "soup_item", "Soupe");
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");
