@@ -80,7 +80,6 @@ class MythrilSickle extends Sickle implements ItemComponents {
                 foreach ($inv->getContents() as $item) {
                     if (array_key_exists($item->getTypeId(), $seed)) {
                         $world->setBlock($cropsPos, $seed[$item->getTypeId()]);
-                        $inv->remove($item);
                         $player->broadcastSound(new AmethystBlockChimeSound());
                     }
                 }
