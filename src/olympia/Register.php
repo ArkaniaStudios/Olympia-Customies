@@ -38,6 +38,7 @@ use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\SoupItem;
 use olympia\items\partners\FishKnockback;
+use olympia\items\tools\EvolvingPickaxe;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
 use olympia\items\tools\mythril\MythrilSword;
@@ -101,6 +102,7 @@ class Register {
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");
+        $i->register(EvolvingPickaxe::class, "evolving_pickaxe", "Pioche évolutive");
 
         /* PARTNERS */
         $i->register(FishKnockback::class, "fish_knockback", "Poisson knockback");

@@ -2,6 +2,7 @@
 
 namespace olympia;
 
+use olympia\listeners\BlockBreak;
 use olympia\listeners\PlayerDeath;
 use pocketmine\plugin\PluginBase;
 use pocketmine\utils\SingletonTrait;
@@ -13,5 +14,6 @@ class Customies extends PluginBase {
         $this::setInstance($this);
         Register::registerAll();
         $this->getServer()->getPluginManager()->registerEvents(new PlayerDeath(), $this);
+        $this->getServer()->getPluginManager()->registerEvents(new BlockBreak(), $this);
     }
 }

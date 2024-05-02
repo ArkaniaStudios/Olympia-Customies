@@ -34,10 +34,11 @@ use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\SoupItem;
 use olympia\items\partners\FishKnockback;
+use olympia\items\tools\EvolvingPickaxe;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
 use olympia\items\tools\mythril\MythrilSword;
-use olympia\items\tools\mythril\OrichalqueSword;
+use olympia\items\tools\orichalque\OrichalqueSword;
 use pocketmine\item\Item;
 use pocketmine\utils\CloningRegistryTrait;
 
@@ -77,6 +78,7 @@ use pocketmine\utils\CloningRegistryTrait;
  *
  * SPECIAL :
  * @method static InfinitySword INFINITY_SWORD()
+ * @method static EvolvingPickaxe EVOLVING_PICKAXE()
  *
  * ITEMS :
  * @method static MythrilIngot MYTHRIL_INGOT()
@@ -122,6 +124,7 @@ final class OlympiaItems {
 
         /* SPECIAL */
         self::_registryRegister("infinity_sword", self::get("infinity_sword"));
+        self::_registryRegister("evolving_pickaxe", self::get("evolving_pickaxe"));
     }
 
     private static function setupArmors(): void {
