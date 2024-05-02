@@ -36,12 +36,14 @@ use olympia\items\key\ItemKey;
 use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
+use olympia\items\others\FlySoup;
 use olympia\items\others\SoupItem;
 use olympia\items\partners\FishKnockback;
 use olympia\items\tools\EvolvingPickaxe;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
 use olympia\items\tools\mythril\MythrilSword;
+use olympia\items\tools\orichalque\OrichalqueSickle;
 use olympia\items\tools\orichalque\OrichalqueSword;
 
 class Register {
@@ -56,6 +58,9 @@ class Register {
 
         /* MYTHRIL */
         $i->register(MythrilSickle::class, "mythril_sickle", "Faucille en mythril");
+
+        /* ORICHALQUE */
+        $i->register(OrichalqueSickle::class, "orichalque_sickle", "Faucille en orichalque");
 
         /* ARMOR */
 
@@ -99,6 +104,7 @@ class Register {
         $i->register(SoupItem::class, "soup_item", "Soupe");
         $i->register(MythrilSword::class, "mythril_sword", "Epée en mythril");
         $i->register(OrichalqueSword::class, "orichalque_sword", "Epée en orichalque");
+        $i->register(FlySoup::class, "fly_soup", "Soupe de Fly");
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");

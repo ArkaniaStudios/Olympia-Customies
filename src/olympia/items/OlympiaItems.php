@@ -46,6 +46,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * MYTHRIL TOOLS :
  * @method static MythrilSickle MYTHRIL_SICKLE()
  *
+ * ORICHALQUE TOOLS :
+ * @method static OrichalqueSword ORICHALQUE_SWORD()
+ *
  * ORICHALQUE ARMORS :
  * @method static OrichalqueBoots ORICHALQUE_BOOTS()
  * @method static OrichalqueLeggings ORICHALQUE_LEGGINGS()
@@ -116,11 +119,15 @@ final class OlympiaItems {
         self::_registryRegister("soup_item", self::get("soup_item"));
         self::_registryRegister("orichalque_sword", self::get("orichalque_sword"));
         self::_registryRegister("mythril_sword", self::get("mythril_sword"));
+        self::_registryRegister("fly_soup", self::get("fly_soup"));
     }
 
     private static function setupTools(): void {
         /* MYTHRIL TOOLS */
         self::_registryRegister("mythril_sickle", self::get("mythril_sickle"));
+
+        /* ORICHALQUE TOOLS */
+        self::_registryRegister("orichalque_sword", self::get("orichalque_sword"));
 
         /* SPECIAL */
         self::_registryRegister("infinity_sword", self::get("infinity_sword"));

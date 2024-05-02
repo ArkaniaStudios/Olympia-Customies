@@ -13,7 +13,7 @@ use pocketmine\player\GameMode;
 use pocketmine\player\Player;
 
 
-class SoupItem extends Item implements ItemComponents {
+class FlySoup extends Item implements ItemComponents {
     use ItemComponentsTrait;
 
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
@@ -21,27 +21,13 @@ class SoupItem extends Item implements ItemComponents {
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("soup_item", $creative);
         $this->setLore([
-            "§rUtilisable pour récupérer de la §evie§r.",
+            "§rUtilisable pour récupérer le §e/fly§r pendant 2 heures.",
         ]);
     }
 
     public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult
     {;
-        $gameMode = $player->getGamemode();
-        if(!$gameMode->equals(GameMode::SURVIVAL()) && !$gameMode->equals(GameMode::ADVENTURE())) {
-            return ItemUseResult::FAIL();
-        }
-
-        $health = $player->getHealth();
-        $maxHealth = $player->getMaxHealth();
-        if ($health >= $maxHealth) {
-            return ItemUseResult::FAIL();
-        }
-
-        $player->getInventory()->setItemInHand($player->getInventory()->getItemInHand()->setCount($player->getInventory()->getItemInHand()->getCount() - 1));
-        $player->setHealth($health + 2);
-
-        $player->sendPopup("§c+1");
+        $player->sendPopup("§ca voir avec julien pour la permission a donner");
         return ItemUseResult::SUCCESS();
     }
 }
