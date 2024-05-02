@@ -21,7 +21,7 @@ class CronosBoots extends Armor implements ItemComponents {
         parent::__construct($identifier, $name, new ArmorTypeInfo(6, 992, ArmorInventory::SLOT_FEET));
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_EQUIPMENT, CreativeInventoryInfo::GROUP_BOOTS);
         $this->initComponent("cronos_boots", $creative);
-        $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_FEET));
+        $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_FEET, 6));
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));

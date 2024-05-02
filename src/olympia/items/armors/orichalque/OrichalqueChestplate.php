@@ -21,7 +21,7 @@ class OrichalqueChestplate extends Armor implements ItemComponents {
         parent::__construct($identifier, $name, new ArmorTypeInfo(6, 992, ArmorInventory::SLOT_CHEST));
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_EQUIPMENT, CreativeInventoryInfo::GROUP_CHESTPLATE);
         $this->initComponent("orichalque_chestplate", $creative);
-        $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_CHEST));
+        $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_CHEST, 6));
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));

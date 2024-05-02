@@ -21,7 +21,7 @@ class OrichalqueHelmet extends Armor implements ItemComponents {
         parent::__construct($identifier, $name, new ArmorTypeInfo(6, 992, ArmorInventory::SLOT_HEAD));
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_EQUIPMENT, CreativeInventoryInfo::GROUP_HELMET);
         $this->initComponent("orichalque_helmet", $creative);
-        $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_HEAD));
+        $this->addComponent(new WearableComponent(WearableComponent::SLOT_ARMOR_HEAD, 6));
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
