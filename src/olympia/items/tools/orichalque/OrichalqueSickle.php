@@ -22,7 +22,7 @@ class OrichalqueSickle extends Sickle implements ItemComponents {
     use ItemComponentsTrait;
 
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown") {
-        parent::__construct($identifier, $name, ToolTier::DIAMOND);
+        parent::__construct($identifier, $name, ToolTier::DIAMOND());
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("orichalque_sickle", $creative);
         $this->addComponent(new HandEquippedComponent());

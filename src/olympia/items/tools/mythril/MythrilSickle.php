@@ -16,14 +16,13 @@ use pocketmine\item\ToolTier;
 use pocketmine\item\VanillaItems;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
-use pocketmine\world\sound\BucketEmptyWaterSound;
 use pocketmine\world\sound\FireExtinguishSound;
 
 class MythrilSickle extends Sickle implements ItemComponents {
     use ItemComponentsTrait;
 
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown") {
-        parent::__construct($identifier, $name, ToolTier::DIAMOND);
+        parent::__construct($identifier, $name, ToolTier::DIAMOND());
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("mythril_sickle", $creative);
         $this->addComponent(new HandEquippedComponent());
