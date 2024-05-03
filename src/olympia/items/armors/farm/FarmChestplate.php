@@ -26,7 +26,7 @@ class FarmChestplate extends Armor implements ItemComponents {
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
         $this->setLore([
-            "§rCes bottes en farm sont peu §epuissantes §rmais",
+            "§rCe plastron en farm sont peu §epuissantes §rmais",
             "§relles donnent des§e avantages§r !",
         ]);
     }

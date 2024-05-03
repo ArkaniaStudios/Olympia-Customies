@@ -79,13 +79,15 @@ class MythrilSickle extends Sickle implements ItemComponents {
         }
 
         foreach ($crop as $crops) {
-            $farmLandPos = $pos->add($offsets[0], $offsets[1], $offsets[2]);
+
             $cropsPos = $pos->add($crops[0], $crops[1], $crops[2]);
+            $farmLandPos = $cropsPos->subtract(0, 1, 0);
             if ($world->getBlock($farmLandPos)->getTypeId() == VanillaBlocks::FARMLAND()->getTypeId()) {
                 foreach ($inv->getContents() as $item) {
                     if (array_key_exists($item->getTypeId(), $seed)) {
                         $world->setBlock($cropsPos, $seed[$item->getTypeId()]);
                         $player->broadcastSound(new FireExtinguishSound());
+
                     }
                 }
             }
