@@ -3,9 +3,10 @@
 namespace olympia\items;
 
 use pocketmine\item\Item;
+use pocketmine\item\TieredTool;
 use pocketmine\math\Vector3;
 
-class Sickle extends Item {
+class Sickle extends TieredTool {
     private int $radius;
 
     public function setRadius(int $radius, int $y): array {

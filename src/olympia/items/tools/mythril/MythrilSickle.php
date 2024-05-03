@@ -12,6 +12,7 @@ use pocketmine\block\Block;
 use pocketmine\block\VanillaBlocks;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\ItemUseResult;
+use pocketmine\item\ToolTier;
 use pocketmine\item\VanillaItems;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
@@ -21,8 +22,8 @@ use pocketmine\world\sound\FireExtinguishSound;
 class MythrilSickle extends Sickle implements ItemComponents {
     use ItemComponentsTrait;
 
-    public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
-        parent::__construct($identifier, $name, $enchantmentTags);
+    public function __construct(ItemIdentifier $identifier, string $name = "Unknown") {
+        parent::__construct($identifier, $name, ToolTier::DIAMOND);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("mythril_sickle", $creative);
         $this->addComponent(new HandEquippedComponent());
@@ -31,6 +32,10 @@ class MythrilSickle extends Sickle implements ItemComponents {
             "§rLa faucille en §emythril §rpermet de",
             "§rlabourer la terre en §e3x3",
         ]);
+    }
+
+    public function getMaxDurability(): int {
+        return 2000;
     }
 
     public function onInteractBlock(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, array &$returnedItems): ItemUseResult {

@@ -41,11 +41,9 @@ class EvolvingPickaxe extends Pickaxe implements ItemComponents {
         $this->getNamedTag()->setInt("blocks", $blocks + 1);
 
         $enchantments = [
-            10 => 1,
-            25 => 2,
-            50 => 3,
-            100 => 4,
-            300 => 5
+            199 => 2,
+            499 => 3,
+            999 => 5,
         ];
 
         foreach ($enchantments as $blocks => $levels) {
