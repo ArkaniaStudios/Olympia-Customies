@@ -2,11 +2,14 @@
 
 namespace olympia\items\tools\mythril;
 
+use customiesdevs\customies\item\component\DamageComponent;
+use customiesdevs\customies\item\component\DurabilityComponent;
 use customiesdevs\customies\item\component\HandEquippedComponent;
 use customiesdevs\customies\item\component\MaxStackSizeComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
+use olympia\Customies;
 use olympia\items\Sickle;
 use pocketmine\block\Block;
 use pocketmine\block\VanillaBlocks;
@@ -25,6 +28,8 @@ class MythrilSickle extends Sickle implements ItemComponents {
         parent::__construct($identifier, $name, ToolTier::DIAMOND());
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("mythril_sickle", $creative);
+        $this->addComponent(new DurabilityComponent($this->getMaxDurability()));
+        $this->addComponent(new DamageComponent($this->getAttackPoints()));
         $this->addComponent(new HandEquippedComponent());
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->setLore([
@@ -34,7 +39,11 @@ class MythrilSickle extends Sickle implements ItemComponents {
     }
 
     public function getMaxDurability(): int {
-        return 2000;
+        return Customies::getInstance()->getParameters()["items-stats"]["mythril"]["tools"]["sickle"]["durability"];
+    }
+
+    public function getAttackPoints(): int {
+        return Customies::getInstance()->getParameters()["items-stats"]["mythril"]["tools"]["sickle"]["damage"];
     }
 
     public function onInteractBlock(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, array &$returnedItems): ItemUseResult {
