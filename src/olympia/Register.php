@@ -6,6 +6,7 @@ use customiesdevs\customies\block\Model;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use olympia\blocks\BlockUtils;
 use olympia\blocks\ChunkBuster;
+use olympia\blocks\OrichalqueBlock;
 use olympia\items\armors\cronos\CronosBoots;
 use olympia\items\armors\cronos\CronosChestplate;
 use olympia\items\armors\cronos\CronosHelmet;
@@ -117,5 +118,6 @@ class Register {
     private static function block(): void {
         $b = BlockUtils::getInstance();
         $b->register(ChunkBuster::class, "chunk_buster", "chunk_buster", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
+        $b->register(OrichalqueBlock::class, "orichalque_block", "orichalque_block");
     }
 }

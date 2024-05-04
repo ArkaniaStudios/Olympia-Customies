@@ -38,6 +38,7 @@ use olympia\items\tools\EvolvingPickaxe;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
 use olympia\items\tools\mythril\MythrilSword;
+use olympia\items\tools\orichalque\OrichalqueSickle;
 use olympia\items\tools\orichalque\OrichalqueSword;
 use pocketmine\item\Item;
 use pocketmine\utils\CloningRegistryTrait;
@@ -48,6 +49,7 @@ use pocketmine\utils\CloningRegistryTrait;
  *
  * ORICHALQUE TOOLS :
  * @method static OrichalqueSword ORICHALQUE_SWORD()
+ * @method static OrichalqueSickle ORICHALQUE_SICKLE()
  *
  * ORICHALQUE ARMORS :
  * @method static OrichalqueBoots ORICHALQUE_BOOTS()
@@ -87,7 +89,6 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static MythrilIngot MYTHRIL_INGOT()
  * @method static OrichalqueIngot ORICHALQUE_INGOT()
  * @method static SoupItem SOUP_ITEM()
- * @method static OrichalqueSword ORICHALQUE_SWORD()
  * @method static MythrilSword MYTHRIL_SWORD()
  *
  * KEY :
@@ -108,7 +109,7 @@ final class OlympiaItems {
 
     private const PREFIX = "olympia:";
 
-    public static function setup(): void {
+    protected static function setup(): void {
         self::setupTools();
         self::setupArmors();
         self::setupKey();
@@ -117,7 +118,6 @@ final class OlympiaItems {
         self::_registryRegister("mythril_ingot", self::get("mythril_ingot"));
         self::_registryRegister("orichalque_ingot", self::get("orichalque_ingot"));
         self::_registryRegister("soup_item", self::get("soup_item"));
-        self::_registryRegister("orichalque_sword", self::get("orichalque_sword"));
         self::_registryRegister("mythril_sword", self::get("mythril_sword"));
         self::_registryRegister("fly_soup", self::get("fly_soup"));
     }
@@ -128,6 +128,7 @@ final class OlympiaItems {
 
         /* ORICHALQUE TOOLS */
         self::_registryRegister("orichalque_sword", self::get("orichalque_sword"));
+        self::_registryRegister("orichalque_sickle", self::get("orichalque_sickle"));
 
         /* SPECIAL */
         self::_registryRegister("infinity_sword", self::get("infinity_sword"));

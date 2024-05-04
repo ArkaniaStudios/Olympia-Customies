@@ -1,0 +1,22 @@
+items-stats:
+    mythril:
+        tools:
+            sword:
+                damage: 10
+                durability: 2000
+            sickle:
+                damage: 10
+                durability: 2000
+        armors:
+            boots:
+                protection: 5
+                durability: 2000
+            chestplate:
+                protection: 5
+                durability: 2000
+            helmet:
+                protection: 5
+                durability: 2000
+            leggings:
+                protection: 5
+                durability: 2000
