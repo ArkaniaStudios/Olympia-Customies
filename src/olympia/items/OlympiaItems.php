@@ -8,8 +8,6 @@ use olympia\items\armors\cronos\CronosChestplate;
 use olympia\items\armors\cronos\CronosHelmet;
 use olympia\items\armors\cronos\CronosLeggings;
 use olympia\items\armors\farm\FarmBoots;
-use olympia\items\armors\farm\FarmChestplate;
-use olympia\items\armors\farm\FarmHelmet;
 use olympia\items\armors\farm\FarmLeggings;
 use olympia\items\armors\mythril\MythrilBoots;
 use olympia\items\armors\mythril\MythrilChestplate;
@@ -85,8 +83,6 @@ use pocketmine\utils\CloningRegistryTrait;
  * FARM ARMORS :
  * @method static FarmBoots FARM_BOOTS()
  * @method static FarmLeggings FARM_LEGGINGS()
- * @method static FarmChestplate FARM_CHESTPLATE()
- * @method static FarmHelmet FARM_HELMET()
  *
  * SPECIAL :
  * @method static InfinitySword INFINITY_SWORD()
@@ -176,8 +172,6 @@ final class OlympiaItems {
         /* FARM */
         self::_registryRegister("farm_boots", self::get("farm_boots"));
         self::_registryRegister("farm_leggings", self::get("farm_leggings"));
-        self::_registryRegister("farm_chestplate", self::get("farm_chestplate"));
-        self::_registryRegister("farm_helmet", self::get("farm_helmet"));
 
     }
 

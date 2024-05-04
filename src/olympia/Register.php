@@ -12,8 +12,6 @@ use olympia\items\armors\cronos\CronosChestplate;
 use olympia\items\armors\cronos\CronosHelmet;
 use olympia\items\armors\cronos\CronosLeggings;
 use olympia\items\armors\farm\FarmBoots;
-use olympia\items\armors\farm\FarmChestplate;
-use olympia\items\armors\farm\FarmHelmet;
 use olympia\items\armors\farm\FarmLeggings;
 use olympia\items\armors\mythril\MythrilBoots;
 use olympia\items\armors\mythril\MythrilChestplate;
@@ -93,8 +91,6 @@ class Register {
 
         $i->register(FarmBoots::class, "farm_boots", "Bottes en farm");
         $i->register(FarmLeggings::class, "farm_leggings", "Jambières en farm");
-        $i->register(FarmChestplate::class, "farm_chestplate", "Plastron en farm");
-        $i->register(FarmHelmet::class, "farm_helmet", "Casque en farm");
 
         /* KEY */
         $i->register(VoteKey::class, "vote_key", "Clé Vote");
