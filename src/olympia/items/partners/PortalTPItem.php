@@ -6,7 +6,6 @@ use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
 use olympia\Customies;
-use pocketmine\block\Note;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\item\Item;
 use pocketmine\item\ItemIdentifier;
@@ -15,9 +14,6 @@ use pocketmine\math\Vector3;
 use pocketmine\player\Player;
 use pocketmine\scheduler\ClosureTask;
 use pocketmine\world\sound\BellRingSound;
-use pocketmine\world\sound\NoteInstrument;
-use pocketmine\world\sound\NoteSound;
-use pocketmine\world\sound\XpLevelUpSound;
 
 class PortalTPItem extends Item implements ItemComponents {
     use ItemComponentsTrait;
