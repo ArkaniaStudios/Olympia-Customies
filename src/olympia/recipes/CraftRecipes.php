@@ -12,12 +12,16 @@ use pocketmine\Server;
 class CraftRecipes {
 
     private array $crafts = [];
-    private ExactRecipeIngredient $mythril;
-    private ExactRecipeIngredient $orichalque;
+    private ExactRecipeIngredient $mythrilI;
+    private ExactRecipeIngredient $orichalqueI;
+    private ExactRecipeIngredient $stick;
+    private ExactRecipeIngredient $orichalqueB;
 
     public function __construct() {
-        $this->mythril = new ExactRecipeIngredient(OlympiaItems::MYTHRIL_INGOT());
-        $this->orichalque = new ExactRecipeIngredient(OlympiaItems::ORICHALQUE_INGOT());
+        $this->mythrilI = new ExactRecipeIngredient(OlympiaItems::MYTHRIL_INGOT());
+        $this->orichalqueI = new ExactRecipeIngredient(OlympiaItems::ORICHALQUE_INGOT());
+        $this->stick = new ExactRecipeIngredient(VanillaItems::STICK());
+        $this->orichalqueB = new ExactRecipeIngredient(OlympiaBlocks::ORICHALQUE_BLOCK()->asItem());
     }
 
     public function initCraft(): void {
@@ -31,25 +35,25 @@ class CraftRecipes {
     }
 
     private function armorRecipes(): void {
-        $this->crafts[] = new ShapedRecipe(["AAA", "A A"], ["A" => $this->mythril], [OlympiaItems::MYTHRIL_HELMET()]);
-        $this->crafts[] = new ShapedRecipe(["A A", "AAA", "AAA"], ["A" => $this->mythril], [OlympiaItems::MYTHRIL_CHESTPLATE()]);
-        $this->crafts[] = new ShapedRecipe(["AAA", "A A", "A A"], ["A" => $this->mythril], [OlympiaItems::MYTHRIL_LEGGINGS()]);
-        $this->crafts[] = new ShapedRecipe(["A A", "A A"], ["A" => $this->mythril], [OlympiaItems::MYTHRIL_BOOTS()]);
+        $this->crafts[] = new ShapedRecipe(["AAA", "A A"], ["A" => $this->mythrilI], [OlympiaItems::MYTHRIL_HELMET()]);
+        $this->crafts[] = new ShapedRecipe(["A A", "AAA", "AAA"], ["A" => $this->mythrilI], [OlympiaItems::MYTHRIL_CHESTPLATE()]);
+        $this->crafts[] = new ShapedRecipe(["AAA", "A A", "A A"], ["A" => $this->mythrilI], [OlympiaItems::MYTHRIL_LEGGINGS()]);
+        $this->crafts[] = new ShapedRecipe(["A A", "A A"], ["A" => $this->mythrilI], [OlympiaItems::MYTHRIL_BOOTS()]);
 
-        $this->crafts[] = new ShapedRecipe(["AAA", "A A"], ["A" => $this->orichalque], [OlympiaItems::ORICHALQUE_HELMET()]);
-        $this->crafts[] = new ShapedRecipe(["A A", "AAA", "AAA"], ["A" => $this->orichalque], [OlympiaItems::ORICHALQUE_CHESTPLATE()]);
-        $this->crafts[] = new ShapedRecipe(["AAA", "A A", "A A"], ["A" => $this->orichalque], [OlympiaItems::ORICHALQUE_LEGGINGS()]);
-        $this->crafts[] = new ShapedRecipe(["A A", "A A"], ["A" => $this->orichalque], [OlympiaItems::ORICHALQUE_BOOTS()]);
+        $this->crafts[] = new ShapedRecipe(["AAA", "A A"], ["A" => $this->orichalqueI], [OlympiaItems::ORICHALQUE_HELMET()]);
+        $this->crafts[] = new ShapedRecipe(["A A", "AAA", "AAA"], ["A" => $this->orichalqueI], [OlympiaItems::ORICHALQUE_CHESTPLATE()]);
+        $this->crafts[] = new ShapedRecipe(["AAA", "A A", "A A"], ["A" => $this->orichalqueI], [OlympiaItems::ORICHALQUE_LEGGINGS()]);
+        $this->crafts[] = new ShapedRecipe(["A A", "A A"], ["A" => $this->orichalqueI], [OlympiaItems::ORICHALQUE_BOOTS()]);
     }
 
     private function toolsRecipes(): void {
-        $this->crafts[] = new ShapedRecipe(["A", "A", "B"], ["A" => $this->mythril, "B" => VanillaItems::STICK()], [OlympiaItems::MYTHRIL_SWORD()]);
-        $this->crafts[] = new ShapedRecipe(["  A", " AA", "B  "], ["A" => $this->mythril, "B" => VanillaItems::STICK()], [OlympiaItems::MYTHRIL_SICKLE()]);
-        $this->crafts[] = new ShapedRecipe(["A", "A", "B"], ["A" => $this->orichalque, "B" => VanillaItems::STICK()], [OlympiaItems::ORICHALQUE_SWORD()]);
-        $this->crafts[] = new ShapedRecipe(["  A", " AA", "B  "], ["A" => OlympiaBlocks::ORICHALQUE_BLOCK(), "B" => VanillaItems::STICK()], [OlympiaItems::ORICHALQUE_SICKLE()]);
+        $this->crafts[] = new ShapedRecipe(["A", "A", "B"], ["A" => $this->mythrilI, "B" => $this->stick], [OlympiaItems::MYTHRIL_SWORD()]);
+        $this->crafts[] = new ShapedRecipe(["  A", " AA", "B  "], ["A" => $this->mythrilI, "B" => $this->stick], [OlympiaItems::MYTHRIL_SICKLE()]);
+        $this->crafts[] = new ShapedRecipe(["A", "A", "B"], ["A" => $this->orichalqueI, "B" => $this->stick], [OlympiaItems::ORICHALQUE_SWORD()]);
+        $this->crafts[] = new ShapedRecipe(["  A", " AA", "B  "], ["A" => $this->orichalqueB, "B" => $this->stick], [OlympiaItems::ORICHALQUE_SICKLE()]);
     }
 
     private function blocksRecipes(): void {
-        $this->crafts[] = new ShapedRecipe(["AAA", "AAA", "AAA"], ["A" => $this->orichalque], [OlympiaBlocks::ORICHALQUE_BLOCK()]);
+        $this->crafts[] = new ShapedRecipe(["AAA", "AAA", "AAA"], ["A" => $this->orichalqueI], [OlympiaBlocks::ORICHALQUE_BLOCK()->asItem()]);
     }
 }
