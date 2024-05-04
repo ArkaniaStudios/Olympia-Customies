@@ -33,7 +33,9 @@ use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\SoupItem;
+use olympia\items\partners\DashItem;
 use olympia\items\partners\FishKnockback;
+use olympia\items\partners\RocketItem;
 use olympia\items\tools\EvolvingPickaxe;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
@@ -101,6 +103,8 @@ use pocketmine\utils\CloningRegistryTrait;
  *
  * PARTNERS :
  * @method static FishKnockback FISH_KNOCKBACK()
+ * @method static RocketItem ROCKET_ITEM()
+ * @method static DashItem DASH_ITEM()
  */
 
 final class OlympiaItems {
@@ -179,6 +183,8 @@ final class OlympiaItems {
 
     private static function setupPartners(): void {
         self::_registryRegister("fish_knockback", self::get("fish_knockback"));
+        self::_registryRegister("rocket_item", self::get("rocket_item"));
+        self::_registryRegister("dash_item", self::get("dash_item"));
     }
 
     private static function get($identifier): Item {

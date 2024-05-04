@@ -38,7 +38,9 @@ use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\FlySoup;
 use olympia\items\others\SoupItem;
+use olympia\items\partners\DashItem;
 use olympia\items\partners\FishKnockback;
+use olympia\items\partners\RocketItem;
 use olympia\items\tools\EvolvingPickaxe;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
@@ -112,6 +114,8 @@ class Register {
 
         /* PARTNERS */
         $i->register(FishKnockback::class, "fish_knockback", "Poisson knockback");
+        $i->register(RocketItem::class, "rocket_item", "Rocket");
+        $i->register(DashItem::class, "dash_item", "Dash");
     }
 
     private static function block(): void {
