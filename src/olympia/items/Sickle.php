@@ -2,8 +2,10 @@
 
 namespace olympia\items;
 
+use pocketmine\block\VanillaBlocks;
 use pocketmine\item\Item;
 use pocketmine\item\TieredTool;
+use pocketmine\item\VanillaItems;
 use pocketmine\math\Vector3;
 
 class Sickle extends TieredTool {
@@ -27,5 +29,14 @@ class Sickle extends TieredTool {
 
     public function getRadius(): int {
         return $this->radius;
+    }
+
+    public function getSeeds(): array {
+        return [
+            VanillaItems::POTATO()->getTypeId() => VanillaBlocks::POTATOES(),
+            VanillaItems::BEETROOT_SEEDS()->getTypeId() => VanillaBlocks::BEETROOTS(),
+            VanillaItems::CARROT()->getTypeId() => VanillaBlocks::CARROTS(),
+            VanillaItems::WHEAT_SEEDS()->getTypeId() => VanillaBlocks::WHEAT(),
+        ];
     }
 }
