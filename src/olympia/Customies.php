@@ -28,5 +28,7 @@ class Customies extends PluginBase {
 
     public function getParameters(): array {
         return $this->cfg;
+
     }
+
 }

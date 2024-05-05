@@ -8,6 +8,8 @@ use pocketmine\utils\CloningRegistryTrait;
 
 /**
  * @method static OrichalqueBlock ORICHALQUE_BLOCK()
+ * @method static ChunkBuster CHUNK_BUSTER()
+ * @method static NoPearlBlock NOPEARL_BLOCK()
  */
 
 final class OlympiaBlocks {
@@ -17,6 +19,8 @@ final class OlympiaBlocks {
 
     protected static function setup(): void {
         self::_registryRegister("orichalque_block", self::get("orichalque_block"));
+        self::_registryRegister("chunk_buster", self::get("chunk_buster"));
+        self::_registryRegister("nopearl_block", self::get("nopearl_block"));
     }
 
     private static function get($identifier): Block {
