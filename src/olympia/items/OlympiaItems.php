@@ -31,9 +31,7 @@ use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\SoupItem;
-use olympia\items\partners\DashItem;
 use olympia\items\partners\FishKnockback;
-use olympia\items\partners\InfernalItem;
 use olympia\items\partners\LevitationItem;
 use olympia\items\partners\PortalTPItem;
 use olympia\items\partners\ResistanceItem;
@@ -106,7 +104,6 @@ use pocketmine\utils\CloningRegistryTrait;
  * PARTNERS :
  * @method static FishKnockback FISH_KNOCKBACK()
  * @method static RocketItem ROCKET_ITEM()
- * @method static DashItem DASH_ITEM()
  * @method static LevitationItem LEVITATION_ITEM()
  * @method static ResistanceItem RESISTANCE_ITEM()
  * @method static StrengthItem STRENGTH_ITEM()
@@ -188,7 +185,6 @@ final class OlympiaItems {
     private static function setupPartners(): void {
         self::_registryRegister("fish_knockback", self::get("fish_knockback"));
         self::_registryRegister("rocket_item", self::get("rocket_item"));
-        self::_registryRegister("dash_item", self::get("dash_item"));
         self::_registryRegister("levitation_item", self::get("levitation_item"));
         self::_registryRegister("resistance_item", self::get("resistance_item"));
         self::_registryRegister("strength_item", self::get("strength_item"));

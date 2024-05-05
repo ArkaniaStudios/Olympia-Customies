@@ -8,11 +8,15 @@ use customiesdevs\customies\item\component\HandEquippedComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
+use olympia\Customies;
 use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\item\ItemIdentifier;
+use pocketmine\item\ItemUseResult;
 use pocketmine\item\Sword;
 use pocketmine\item\ToolTier;
+use pocketmine\player\Player;
+use pocketmine\math\Vector3;
 
 class InfinitySword extends Sword implements ItemComponents {
     use ItemComponentsTrait;
@@ -30,12 +34,13 @@ class InfinitySword extends Sword implements ItemComponents {
         $this->setLore(["§rNombre de kill(s): §e{$this->getKillCount()}"]);
     }
 
-    public function getAttackPoints(): int {
-        return 10;
+    public function getMaxDurability(): int {
+        return Customies::getInstance()->getParameters()["items-stats"]["others"]["tools"]["infinity"]["durability"];
     }
 
-    public function getMaxDurability(): int {
-        return 2000;
+    public function getAttackPoints(): int
+    {
+        return Customies::getInstance()->getParameters()["items-stats"]["others"]["tools"]["infinity"]["damage"];
     }
 
     public function keepOnDeath(): bool {
@@ -68,5 +73,15 @@ class InfinitySword extends Sword implements ItemComponents {
 
     public function getKillCount(): int {
         return $this->getNamedTag()->getInt("kills");
+    }
+
+    public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult
+    {
+        $motion = clone $player->getMotion();
+        $motion->x += $player->getDirectionVector()->getX() * 1.7;
+        $motion->y += 0.8;
+        $motion->z += $player->getDirectionVector()->getZ() * 1.7;
+        $player->setMotion($motion);
+        return ItemUseResult::SUCCESS();
     }
 }

@@ -37,7 +37,6 @@ use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\FlySoup;
 use olympia\items\others\SoupItem;
-use olympia\items\partners\DashItem;
 use olympia\items\partners\FishKnockback;
 use olympia\items\partners\LevitationItem;
 use olympia\items\partners\PortalTPItem;
@@ -116,7 +115,6 @@ class Register {
         /* PARTNERS */
         $i->register(FishKnockback::class, "fish_knockback", "Poisson knockback");
         $i->register(RocketItem::class, "rocket_item", "Rocket");
-        $i->register(DashItem::class, "dash_item", "Dash");
         $i->register(ResistanceItem::class, "resistance_item", "Resistance");
         $i->register(LevitationItem::class, "levitation_item", "Levitation");
         $i->register(StrengthItem::class, "strength_item", "Strength");

@@ -8,6 +8,7 @@ use customiesdevs\customies\item\component\HandEquippedComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
+use olympia\Customies;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\Sword;
 use pocketmine\item\ToolTier;
@@ -27,10 +28,10 @@ class MythrilSword extends Sword implements ItemComponents {
     }
 
     public function getAttackPoints(): int {
-        return 8;
+        return Customies::getInstance()->getParameters()["items-stats"]["mythril"]["tools"]["sword"]["damage"];
     }
 
     public function getMaxDurability(): int {
-        return 2000;
+        return Customies::getInstance()->getParameters()["items-stats"]["mythril"]["tools"]["sword"]["durability"];
     }
 }

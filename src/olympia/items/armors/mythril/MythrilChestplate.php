@@ -9,6 +9,7 @@ use customiesdevs\customies\item\component\WearableComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
+use olympia\Customies;
 use pocketmine\inventory\ArmorInventory;
 use pocketmine\item\Armor;
 use pocketmine\item\ArmorTypeInfo;
@@ -32,6 +33,11 @@ class MythrilChestplate extends Armor implements ItemComponents {
     }
 
     public function getMaxDurability(): int {
-        return 992;
+        return Customies::getInstance()->getParameters()["items-stats"]["mythril"]["armors"]["chestplate"]["durability"];
+    }
+
+    public function getDefensePoints(): int
+    {
+        return Customies::getInstance()->getParameters()["items-stats"]["mythril"]["armors"]["chestplate"]["protection"];
     }
 }

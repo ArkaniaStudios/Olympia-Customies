@@ -2,11 +2,13 @@
 
 namespace olympia\items\tools;
 
+use customiesdevs\customies\item\component\DamageComponent;
 use customiesdevs\customies\item\component\DurabilityComponent;
 use customiesdevs\customies\item\component\HandEquippedComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
+use olympia\Customies;
 use pocketmine\item\enchantment\EnchantmentInstance;
 use pocketmine\item\enchantment\VanillaEnchantments;
 use pocketmine\item\ItemIdentifier;
@@ -23,13 +25,19 @@ class EvolvingPickaxe extends Pickaxe implements ItemComponents {
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_EQUIPMENT, CreativeInventoryInfo::GROUP_PICKAXE);
         $this->initComponent("evolving_pickaxe", $creative);
         $this->addComponent(new DurabilityComponent($this->getMaxDurability()));
+        $this->addComponent(new DamageComponent($this->getAttackPoints()));
         $this->addComponent(new HandEquippedComponent(true));
         $this->getNamedTag()->setInt("blocks", 0);
         $this->setLore(["§rNombre de block(s): §e{$this->getBlockCount()}"]);
     }
 
     public function getMaxDurability(): int {
-        return 2000;
+        return Customies::getInstance()->getParameters()["items-stats"]["others"]["tools"]["evolving"]["durability"];
+    }
+
+    public function getAttackPoints(): int
+    {
+        return Customies::getInstance()->getParameters()["items-stats"]["others"]["tools"]["evolving"]["damage"];
     }
 
     public function keepOnDeath(): bool {

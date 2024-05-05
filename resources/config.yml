@@ -20,3 +20,74 @@ items-stats:
             leggings:
                 protection: 5
                 durability: 2000
+
+    orichalque:
+        tools:
+            sword:
+                damage: 10
+                durability: 2000
+            sickle:
+                damage: 10
+                durability: 2000
+        armors:
+            boots:
+                protection: 5
+                durability: 2000
+            chestplate:
+                protection: 5
+                durability: 2000
+            helmet:
+                protection: 5
+                durability: 2000
+            leggings:
+                protection: 5
+                durability: 2000
+
+    farm:
+        armors:
+            boots:
+                protection: 5
+                durability: 2000
+            leggings:
+                protection: 5
+                durability: 2000
+
+
+    cronos:
+        armors:
+            boots:
+                protection: 5
+                durability: 2000
+            chestplate:
+                protection: 5
+                durability: 2000
+            helmet:
+                protection: 5
+                durability: 2000
+            leggings:
+                protection: 5
+                durability: 2000
+
+    theia:
+        armors:
+            boots:
+                protection: 5
+                durability: 2000
+            chestplate:
+                protection: 5
+                durability: 2000
+            helmet:
+                protection: 5
+                durability: 2000
+            leggings:
+                protection: 5
+                durability: 2000
+
+    others:
+        tools:
+            evolving:
+                damage: 10
+                durability: 2000
+            infinity:
+                damage: 10
+                durability: 2000

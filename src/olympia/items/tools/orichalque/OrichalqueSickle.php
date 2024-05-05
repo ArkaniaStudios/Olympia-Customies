@@ -7,6 +7,7 @@ use customiesdevs\customies\item\component\MaxStackSizeComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
+use olympia\Customies;
 use olympia\items\Sickle;
 use pocketmine\block\Block;
 use pocketmine\block\VanillaBlocks;
@@ -34,7 +35,11 @@ class OrichalqueSickle extends Sickle implements ItemComponents {
     }
 
     public function getMaxDurability(): int {
-        return 4000;
+        return Customies::getInstance()->getParameters()["items-stats"]["orichalque"]["tools"]["sickle"]["durability"];
+    }
+
+    public function getAttackPoints(): int {
+        return Customies::getInstance()->getParameters()["items-stats"]["orichalque"]["tools"]["sickle"]["damage"];
     }
 
     public function onInteractBlock(Player $player, Block $blockReplace, Block $blockClicked, int $face, Vector3 $clickVector, array &$returnedItems): ItemUseResult {

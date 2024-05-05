@@ -3,6 +3,7 @@
 namespace olympia\utils;
 
 use olympia\Customies;
+use pocketmine\player\Player;
 use pocketmine\scheduler\ClosureTask;
 
 class PlayerCooldowns
@@ -19,21 +20,6 @@ class PlayerCooldowns
     const COOLDOWN_EGGSTRAP = 9;
     const COOLDOWN_SNOWBALL = 10;
     const COOLDOWN_PORTALTP = 11;
-    const COOLDOWN_COMMANDSTUFF = 12;
-    const COOLDOWN_KITJOUEUR = 13;
-    const COOLDOWN_KITREFILL = 14;
-    const COOLDOWN_KITOUTILS = 15;
-    const COOLDOWN_KITANGES = 16;
-    const COOLDOWN_KITDIABLOTINS = 17;
-    const COOLDOWN_KITARCHANGES = 18;
-    const COOLDOWN_KITPERSEPHONE = 19;
-    const COOLDOWN_KITPOSEIDON = 20;
-    const COOLDOWN_KITHECATE = 21;
-    const COOLDOWN_KITZEUS = 22;
-    const COOLDOWN_KITHADES = 23;
-    const COOLDOWN_KITBOOSTER = 24;
-    const COOLDOWN_REPAIR = 25;
-    const COOLDOWN_REPAIRALL = 26;
 
     private Player $player;
 
@@ -50,21 +36,6 @@ class PlayerCooldowns
         self::COOLDOWN_EGGSTRAP => null,
         self::COOLDOWN_SNOWBALL => null,
         self::COOLDOWN_PORTALTP => null,
-        self::COOLDOWN_COMMANDSTUFF => null,
-        self::COOLDOWN_KITJOUEUR => null,
-        self::COOLDOWN_KITREFILL => null,
-        self::COOLDOWN_KITOUTILS => null,
-        self::COOLDOWN_KITANGES => null,
-        self::COOLDOWN_KITDIABLOTINS => null,
-        self::COOLDOWN_KITARCHANGES => null,
-        self::COOLDOWN_KITPERSEPHONE => null,
-        self::COOLDOWN_KITPOSEIDON => null,
-        self::COOLDOWN_KITHECATE => null,
-        self::COOLDOWN_KITZEUS => null,
-        self::COOLDOWN_KITHADES => null,
-        self::COOLDOWN_KITBOOSTER => null,
-        self::COOLDOWN_REPAIR => null,
-        self::COOLDOWN_REPAIRALL => null,
     ];
 
     public function __construct(Player $player)
@@ -86,7 +57,7 @@ class PlayerCooldowns
         }
 
         if($messageEnd !== "") {
-            Customies::getInstance()->getInstance()->getScheduler()->scheduleDelayedTask(new ClosureTask(function () use ($messageEnd): void {
+            Customies::getInstance()->getScheduler()->scheduleDelayedTask(new ClosureTask(function () use ($messageEnd): void {
                 if($this->player->isOnline()) {
                     $this->player->sendMessage($messageEnd);
                 }
