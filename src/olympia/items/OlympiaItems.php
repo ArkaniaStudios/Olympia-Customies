@@ -31,12 +31,17 @@ use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\SoupItem;
+use olympia\items\partners\EggTrap;
 use olympia\items\partners\FishKnockback;
+use olympia\items\partners\InfernalStick;
 use olympia\items\partners\LevitationItem;
+use olympia\items\partners\NobuildStick;
+use olympia\items\partners\NoPearlStick;
 use olympia\items\partners\PortalTPItem;
 use olympia\items\partners\ResistanceItem;
 use olympia\items\partners\RocketItem;
 use olympia\items\partners\StrengthItem;
+use olympia\items\partners\SwitchBall;
 use olympia\items\tools\EvolvingPickaxe;
 use olympia\items\tools\InfinitySword;
 use olympia\items\tools\mythril\MythrilSickle;
@@ -108,6 +113,11 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static ResistanceItem RESISTANCE_ITEM()
  * @method static StrengthItem STRENGTH_ITEM()
  * @method static PortalTPItem PORTAL_ITEM()
+ * @method static SwitchBall SWITCHBALL()
+ * @method static NoPearlStick NOPEARL_STICK()
+ * @method static NobuildStick NOBUILD_STICK()
+ * @method static InfernalStick INFERNAL_STICK()
+ * @method static EggTrap EGGTRAP()
  */
 
 final class OlympiaItems {
@@ -189,6 +199,11 @@ final class OlympiaItems {
         self::_registryRegister("resistance_item", self::get("resistance_item"));
         self::_registryRegister("strength_item", self::get("strength_item"));
         self::_registryRegister("portal_item", self::get("portal_item"));
+        self::_registryRegister("switch_ball", self::get("switch_ball"));
+        self::_registryRegister("nopearl_stick", self::get("nopearl_stick"));
+        self::_registryRegister("nobuild_stick", self::get("nobuild_stick"));
+        self::_registryRegister("infernal_stick", self::get("infernal_stick"));
+        self::_registryRegister("eggtrap_item", self::get("eggtrap_item"));
     }
 
     private static function get($identifier): Item {
