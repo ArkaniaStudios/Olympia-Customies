@@ -82,7 +82,6 @@ class InfinitySword extends Sword implements ItemComponents {
         $motion->y += 0.8;
         $motion->z += $player->getDirectionVector()->getZ() * 1.7;
         $player->setMotion($motion);
-        $player->getInventory()->setItemInHand($player->getInventory()->getItemInHand()->setCount($player->getInventory()->getItemInHand()->getCount() - 1));
         return ItemUseResult::SUCCESS();
     }
 }
