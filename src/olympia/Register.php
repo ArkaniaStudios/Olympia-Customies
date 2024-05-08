@@ -41,6 +41,7 @@ use olympia\items\others\SoupItem;
 use olympia\items\partners\EggTrap;
 use olympia\items\partners\FishKnockback;
 use olympia\items\partners\InfernalStick;
+use olympia\items\partners\InstantTP;
 use olympia\items\partners\LevitationItem;
 use olympia\items\partners\NobuildStick;
 use olympia\items\partners\NoPearlStick;
@@ -130,6 +131,7 @@ class Register {
         $i->register(NobuildStick::class, "nobuild_stick", "Bâton AntiBuild");
         $i->register(InfernalStick::class, "infernal_stick", "Bâton Infernal");
         $i->register(EggTrap::class, "eggtrap_item", "Piège à toile");
+        $i->register(InstantTP::class, "instanttp_item", "InstantTP");
     }
 
     private static function block(): void {

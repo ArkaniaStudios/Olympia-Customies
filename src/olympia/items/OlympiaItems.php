@@ -34,6 +34,7 @@ use olympia\items\others\SoupItem;
 use olympia\items\partners\EggTrap;
 use olympia\items\partners\FishKnockback;
 use olympia\items\partners\InfernalStick;
+use olympia\items\partners\InstantTP;
 use olympia\items\partners\LevitationItem;
 use olympia\items\partners\NobuildStick;
 use olympia\items\partners\NoPearlStick;
@@ -118,6 +119,7 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static NobuildStick NOBUILD_STICK()
  * @method static InfernalStick INFERNAL_STICK()
  * @method static EggTrap EGGTRAP()
+ * @method static InstantTP INSTANTTP_ITEM()
  */
 
 final class OlympiaItems {
@@ -204,6 +206,7 @@ final class OlympiaItems {
         self::_registryRegister("nobuild_stick", self::get("nobuild_stick"));
         self::_registryRegister("infernal_stick", self::get("infernal_stick"));
         self::_registryRegister("eggtrap_item", self::get("eggtrap_item"));
+        self::_registryRegister("instanttp_item", self::get("instanttp_item"));
     }
 
     private static function get($identifier): Item {
