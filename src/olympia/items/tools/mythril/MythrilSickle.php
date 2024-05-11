@@ -16,7 +16,6 @@ use pocketmine\block\VanillaBlocks;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\ItemUseResult;
 use pocketmine\item\ToolTier;
-use pocketmine\item\VanillaItems;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
 use pocketmine\world\sound\FireExtinguishSound;
@@ -50,6 +49,7 @@ class MythrilSickle extends Sickle implements ItemComponents {
         $inv = $player->getInventory();
         $pos = $blockClicked->getPosition();
         $world = $pos->getWorld();
+
         $offset = [
             [0, 0, 0],
             [1, 0, 0],
@@ -72,12 +72,6 @@ class MythrilSickle extends Sickle implements ItemComponents {
             [-1, 1, -1],
             [-1, 1, 1]
         ];
-        $seed = [
-            VanillaItems::POTATO()->getTypeId() => VanillaBlocks::POTATOES(),
-            VanillaItems::BEETROOT_SEEDS()->getTypeId() => VanillaBlocks::POTATOES(),
-            VanillaItems::CARROT()->getTypeId() => VanillaBlocks::CARROTS(),
-            VanillaItems::WHEAT_SEEDS()->getTypeId() => VanillaBlocks::WHEAT(),
-        ];
 
         foreach ($offset as $offsets) {
             $offsetsPos = $pos->add($offsets[0], $offsets[1], $offsets[2]);
@@ -88,20 +82,26 @@ class MythrilSickle extends Sickle implements ItemComponents {
         }
 
         foreach ($crop as $crops) {
-
             $cropsPos = $pos->add($crops[0], $crops[1], $crops[2]);
             $farmLandPos = $cropsPos->subtract(0, 1, 0);
             if ($world->getBlock($farmLandPos)->getTypeId() == VanillaBlocks::FARMLAND()->getTypeId()) {
-                foreach ($inv->getContents() as $item) {
-                    if (array_key_exists($item->getTypeId(), $seed)) {
-                        $world->setBlock($cropsPos, $seed[$item->getTypeId()]);
-                        $player->broadcastSound(new FireExtinguishSound());
+                $planted = false;
 
+                foreach ($inv->getContents() as $slot => $item) {
+                    if (array_key_exists($item->getTypeId(), $this->getSeeds()) && $inv->canAddItem($this->getSeeds()[$item->getTypeId()])) {
+                        $world->setBlock($cropsPos, $this->getSeeds()[$item->getTypeId()]);
+                        $player->broadcastSound(new FireExtinguishSound());
+                        $inv->setItem($slot, $item->setCount($item->getCount() - 1));
+                        $planted = true;
+                        break;
                     }
+                }
+
+                if ($planted) {
+                    continue;
                 }
             }
         }
-
         return ItemUseResult::SUCCESS();
     }
 }
