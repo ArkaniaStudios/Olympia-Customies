@@ -5,6 +5,7 @@ namespace olympia\items\partners;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
+use olympia\Customies;
 use pocketmine\item\Item;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\ItemUseResult;
@@ -28,7 +29,7 @@ class RocketItem extends Item implements ItemComponents {
     public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult
     {
         $motion = clone $player->getMotion();
-        $motion->y += 0.069 * 50;
+        $motion->y += 0.069 * Customies::getInstance()->getParameters()["items-stats"]["others"]["partners"]["rocket"]["blocks"];
         $player->setMotion($motion);
         $player->getInventory()->setItemInHand($player->getInventory()->getItemInHand()->setCount($player->getInventory()->getItemInHand()->getCount() - 1));
         return ItemUseResult::SUCCESS();

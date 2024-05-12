@@ -91,3 +91,6 @@ items-stats:
             infinity:
                 damage: 10
                 durability: 2000
+        partners:
+            rocket:
+                blocks: 50

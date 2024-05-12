@@ -67,6 +67,6 @@ class PlayerCooldowns
 
     public function hasCooldown(int $id): bool
     {
-        return !is_null($this->cooldownsList[$id]) && $this->cooldownsList[$id] - time() > 0;
+        return isset($this->cooldownsList[$id]) && $this->cooldownsList[$id] > time();
     }
 }
