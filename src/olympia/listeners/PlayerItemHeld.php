@@ -10,7 +10,7 @@ use pocketmine\event\player\PlayerItemHeldEvent;
 
 class PlayerItemHeld implements Listener {
 
-    public function onDeath(PlayerItemHeldEvent $e): void {
+    public function onHeld(PlayerItemHeldEvent $e): void {
         $player = $e->getPlayer();
         $inv = $player->getInventory();
         $item = $inv->getItemInHand();
