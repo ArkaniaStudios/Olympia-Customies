@@ -115,7 +115,7 @@ class Register {
         $i->register(MythrilSword::class, "mythril_sword", "Epée en mythril");
         $i->register(OrichalqueSword::class, "orichalque_sword", "Epée en orichalque");
         $i->register(FlySoup::class, "fly_soup", "Soupe de Fly");
-        $i->register(GeneratorBucket::class, "generator_bucket", "Seau de générateur");
+        $i->register(GeneratorBucket::class, "generator_bucket", "Generator Bucket");
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");

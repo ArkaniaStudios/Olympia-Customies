@@ -12,6 +12,7 @@
   </component>
   <component name="PhpIncludePathManager">
     <include_path>
+      <path value="$PROJECT_DIR$/../../../NarceUI" />
       <path value="$PROJECT_DIR$/../../../customiesdevs" />
       <path value="$PROJECT_DIR$/../../../PM5" />
     </include_path>

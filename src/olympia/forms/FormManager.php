@@ -33,7 +33,7 @@ class FormManager {
                             }
                         }
 
-                        $player->sendMessage("§aVous avez accepté la destruction des blocs autour de vous !");
+                        $player->sendTitle("§aVous avez accepté la destruction !");
                         $player->broadcastSound(new BellRingSound());
                         break;
                     case 0:
