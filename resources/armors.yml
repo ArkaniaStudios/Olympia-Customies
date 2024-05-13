@@ -1,0 +1,8 @@
+---
+olympia:farm_boots:
+  message: ""
+  effects:
+    speed:
+      amplifier: 2
+      visible: false
+...
