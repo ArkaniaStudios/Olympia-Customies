@@ -1,8 +1,43 @@
 ---
+# Farms
 olympia:farm_boots:
   message: ""
   effects:
     speed:
       amplifier: 2
+      visible: false
+olympia:farm_leggings:
+  message: ""
+  effects:
+    haste:
+      amplifier: 2
+      visible: false
+
+# Cronos
+olympia:cronos_boots:
+  message: ""
+  effects:
+    speed:
+      amplifier: 2
+      visible: false
+olympia:cronos_chestplate:
+  message: ""
+  effects:
+    strength:
+      amplifier: 1
+      visible: false
+
+# Theia
+olympia:theia_boots:
+  message: ""
+  effects:
+    speed:
+      amplifier: 2
+      visible: false
+olympia:theia_chestplate:
+  message: ""
+  effects:
+    resistance:
+      amplifier: 1
       visible: false
 ...
