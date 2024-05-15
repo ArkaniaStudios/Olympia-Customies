@@ -35,15 +35,18 @@ class CraftRecipes {
     }
 
     private function armorRecipes(): void {
-        $this->crafts[] = new ShapedRecipe(["AAA", "A A"], ["A" => $this->mythrilI], [OlympiaItems::MYTHRIL_HELMET()]);
-        $this->crafts[] = new ShapedRecipe(["A A", "AAA", "AAA"], ["A" => $this->mythrilI], [OlympiaItems::MYTHRIL_CHESTPLATE()]);
-        $this->crafts[] = new ShapedRecipe(["AAA", "A A", "A A"], ["A" => $this->mythrilI], [OlympiaItems::MYTHRIL_LEGGINGS()]);
-        $this->crafts[] = new ShapedRecipe(["A A", "A A"], ["A" => $this->mythrilI], [OlympiaItems::MYTHRIL_BOOTS()]);
+        $types = [
+            [$this->mythrilI, [OlympiaItems::MYTHRIL_HELMET(), OlympiaItems::MYTHRIL_CHESTPLATE(), OlympiaItems::MYTHRIL_LEGGINGS(), OlympiaItems::MYTHRIL_BOOTS()]],
+            [$this->orichalqueI, [OlympiaItems::ORICHALQUE_HELMET(), OlympiaItems::ORICHALQUE_CHESTPLATE(), OlympiaItems::ORICHALQUE_LEGGINGS(), OlympiaItems::ORICHALQUE_BOOTS()]],
+        ];
 
-        $this->crafts[] = new ShapedRecipe(["AAA", "A A"], ["A" => $this->orichalqueI], [OlympiaItems::ORICHALQUE_HELMET()]);
-        $this->crafts[] = new ShapedRecipe(["A A", "AAA", "AAA"], ["A" => $this->orichalqueI], [OlympiaItems::ORICHALQUE_CHESTPLATE()]);
-        $this->crafts[] = new ShapedRecipe(["AAA", "A A", "A A"], ["A" => $this->orichalqueI], [OlympiaItems::ORICHALQUE_LEGGINGS()]);
-        $this->crafts[] = new ShapedRecipe(["A A", "A A"], ["A" => $this->orichalqueI], [OlympiaItems::ORICHALQUE_BOOTS()]);
+        foreach ($types as $type) {
+            list($material, list($helmet, $chestplate, $leggings, $boots)) = $type;
+            $this->crafts[] = new ShapedRecipe(["AAA", "A A"], ["A" => $material], [$helmet]);
+            $this->crafts[] = new ShapedRecipe(["A A", "AAA", "AAA"], ["A" => $material], [$chestplate]);
+            $this->crafts[] = new ShapedRecipe(["AAA", "A A", "A A"], ["A" => $material], [$leggings]);
+            $this->crafts[] = new ShapedRecipe(["A A", "A A"], ["A" => $material], [$boots]);
+        }
     }
 
     private function toolsRecipes(): void {
