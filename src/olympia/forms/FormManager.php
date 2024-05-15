@@ -5,8 +5,10 @@ namespace olympia\forms;
 use nacre\form\class\ModalForm;
 use pocketmine\block\VanillaBlocks;
 use pocketmine\player\Player;
+use pocketmine\world\particle\ExplodeParticle;
 use pocketmine\world\sound\BellRingSound;
 use pocketmine\math\Vector3;
+use pocketmine\world\Position;
 
 class FormManager {
 
@@ -29,6 +31,7 @@ class FormManager {
                             for ($y = 1; $y <= 100; $y++) {
                                 for ($z = $centerZ - $radius; $z <= $centerZ + $radius; $z++) {
                                     $player->getWorld()->setBlock(new Vector3($x, $y, $z), VanillaBlocks::AIR());
+                                    $player->getWorld()->addParticle($position, new ExplodeParticle());
                                 }
                             }
                         }

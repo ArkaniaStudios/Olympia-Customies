@@ -2,6 +2,7 @@
 
 namespace olympia\items\others;
 
+use customiesdevs\customies\item\component\MaxStackSizeComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
@@ -19,12 +20,21 @@ class GeneratorBucket extends Item implements ItemComponents {
         parent::__construct($identifier, $name, $enchantmentTags);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("generator_bucket", $creative);
+        $this->addComponent(new MaxStackSizeComponent(1));
+        $this->setLore([
+            "§rCet objet permet de générer un mur de cobblestone.",
+        ]);
+    }
+
+    public function getMaxStackSize(): int
+    {
+        return 1;
     }
 
     public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult {
         $pos = $player->getPosition();
         for ($y = 1; $y <= $pos->y - 1; $y++) {
-            $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::DIAMOND());
+            $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::COBBLESTONE());
         }
         return ItemUseResult::SUCCESS();
     }
