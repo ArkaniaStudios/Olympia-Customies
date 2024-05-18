@@ -126,7 +126,7 @@ class Register {
         $i->register(RocketItem::class, "rocket_item", "Rocket");
         $i->register(ResistanceItem::class, "resistance_item", "Resistance");
         $i->register(LevitationItem::class, "levitation_item", "Levitation");
-        $i->register(StrengthItem::class, "strength_item", "Strength");
+        $i->register(StrengthItem::class, "strength_item", "Force");
         $i->register(PortalTPItem::class, "portal_item", "PortalTP");
         $i->register(SwitchBall::class, "switch_ball", "SwitchBall");
         $i->register(NoPearlStick::class, "nopearl_stick", "Bâton AntiPearl");
