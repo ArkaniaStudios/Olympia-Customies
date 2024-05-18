@@ -115,7 +115,7 @@ class Customies extends PluginBase implements Listener {
     {
         $player = $event->getPlayer();
         foreach ($player->getArmorInventory()->getContents() as $targetItem) {
-            if ($targetItem instanceof Armor) { //if the item is not armor is not my problem
+            if ($targetItem instanceof Armor) {
                 $slot = $targetItem->getArmorSlot();
                 $sourceItem = $player->getArmorInventory()->getItem($slot);
 

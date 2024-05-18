@@ -12,7 +12,7 @@ use pocketmine\item\ItemIdentifier;
 use pocketmine\item\ItemUseResult;
 use pocketmine\math\Vector3;
 use pocketmine\player\Player;
-use pocketmine\world\sound\BellRingSound;
+use pocketmine\world\sound\BlockPlaceSound;
 
 class GeneratorBucket extends Item implements ItemComponents {
     use ItemComponentsTrait;
@@ -36,7 +36,8 @@ class GeneratorBucket extends Item implements ItemComponents {
         $pos = $player->getPosition();
         for ($y = 1; $y <= $pos->y - 1; $y++) {
             $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::COBBLESTONE());
-            $player->broadcastSound(new BellRingSound());
+            $player->broadcastSound(new BlockPlaceSound(VanillaBlocks::COBBLESTONE()));
+            $player->sendPopup("§r§aCobblestone placé !");
         }
         return ItemUseResult::SUCCESS();
     }

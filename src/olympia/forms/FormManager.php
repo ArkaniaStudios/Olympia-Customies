@@ -9,6 +9,7 @@ use pocketmine\world\particle\ExplodeParticle;
 use pocketmine\world\sound\BellRingSound;
 use pocketmine\math\Vector3;
 use pocketmine\world\Position;
+use pocketmine\world\sound\BlockBreakSound;
 
 class FormManager {
 
@@ -36,11 +37,11 @@ class FormManager {
                             }
                         }
 
-                        $player->sendTitle("§aVous avez accepté la destruction !");
-                        $player->broadcastSound(new BellRingSound());
+                        $player->sendToastNotification("§6Olympia", "§aVous avez accepté la destruction du chunk !");
+                        $player->broadcastSound(new BlockBreakSound(VanillaBlocks::GRASS()));
                         break;
                     case 0:
-                        $player->sendMessage("§cVous avez annulé la destruction du chunk !");
+                        $player->sendToastNotification("§6Olympia", "§aVous avez refusé la destruction du chunk !");
                         break;
                 }
             },
