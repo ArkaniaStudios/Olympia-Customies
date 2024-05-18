@@ -2,7 +2,9 @@
 
 namespace olympia\items\others;
 
+use customiesdevs\customies\item\component\DurabilityComponent;
 use customiesdevs\customies\item\component\MaxStackSizeComponent;
+use customiesdevs\customies\item\component\UseDurationComponent;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
@@ -22,21 +24,21 @@ class GeneratorFence extends Item implements ItemComponents {
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
         $this->initComponent("generator_fence", $creative);
         $this->addComponent(new MaxStackSizeComponent(1));
+        $this->addComponent(new DurabilityComponent(128));
         $this->setLore([
             "§rCet objet permet de générer un mur de portillions.",
         ]);
     }
 
-    public function getMaxStackSize(): int
-    {
+    public function getMaxStackSize(): int {
         return 1;
     }
 
     public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult {
         $pos = $player->getPosition();
         for ($y = 1; $y <= $pos->y - 1; $y++) {
-            $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::OAK_FENCE());
-            $player->broadcastSound(new BlockPlaceSound(VanillaBlocks::OAK_FENCE()));
+            $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::OAK_FENCE_GATE());
+            $player->broadcastSound(new BlockPlaceSound(VanillaBlocks::OAK_FENCE_GATE()));
             $player->sendPopup("§r§aCobblestone placé !");
         }
         return ItemUseResult::SUCCESS();

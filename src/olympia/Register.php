@@ -117,9 +117,9 @@ class Register {
         $i->register(MythrilSword::class, "mythril_sword", "Epée en mythril");
         $i->register(OrichalqueSword::class, "orichalque_sword", "Epée en orichalque");
         $i->register(FlySoup::class, "fly_soup", "Soupe de Fly");
-        $i->register(GeneratorCobble::class, "generator_cobble", "Generator Bucket");
-        $i->register(GeneratorCraftingTable::class, "generator_craftingtable", "Generator Table de craft");
-        $i->register(GeneratorFence::class, "generator_fence", "Generator Portillon");
+        $i->register(GeneratorCobble::class, "generator_cobble", "Generator Bucket (Cobble)");
+        $i->register(GeneratorCraftingTable::class, "generator_craftingtable", "Generator Bucket (Fence)");
+        $i->register(GeneratorFence::class, "generator_fence", "Generator Bucket (Fence)");
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");
