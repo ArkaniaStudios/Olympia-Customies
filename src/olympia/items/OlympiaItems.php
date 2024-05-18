@@ -31,7 +31,9 @@ use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\FlySoup;
-use olympia\items\others\GeneratorBucket;
+use olympia\items\others\GeneratorCobble;
+use olympia\items\others\GeneratorCraftingTable;
+use olympia\items\others\GeneratorFence;
 use olympia\items\others\SoupItem;
 use olympia\items\partners\EggTrap;
 use olympia\items\partners\FishKnockback;
@@ -100,7 +102,9 @@ use pocketmine\utils\CloningRegistryTrait;
  * @method static SoupItem SOUP_ITEM()
  * @method static MythrilSword MYTHRIL_SWORD()
  * @method static FlySoup FLY_SOUP()
- * @method static GeneratorBucket GENERATOR_BUCKET()
+ * @method static GeneratorCobble GENERATOR_COBBLE()
+ * @method static GeneratorFence GENERATOR_FENCE()
+ * @method static GeneratorCraftingTable GENERATOR_CRAFTINGTABLE()
  *
  * KEY :
  * @method static CosmeticKey COSMETIC_KEY()
@@ -142,7 +146,9 @@ final class OlympiaItems {
         self::_registryRegister("soup_item", self::get("soup_item"));
         self::_registryRegister("mythril_sword", self::get("mythril_sword"));
         self::_registryRegister("fly_soup", self::get("fly_soup"));
-        self::_registryRegister("generator_bucket", self::get("generator_bucket"));
+        self::_registryRegister("generator_cobble", self::get("generator_cobble"));
+        self::_registryRegister("generator_fence", self::get("generator_fence"));
+        self::_registryRegister("generator_craftingtable", self::get("generator_craftingtable"));
     }
 
     private static function setupTools(): void {

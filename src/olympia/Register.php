@@ -37,7 +37,9 @@ use olympia\items\key\MineKey;
 use olympia\items\key\StoreKey;
 use olympia\items\key\VoteKey;
 use olympia\items\others\FlySoup;
-use olympia\items\others\GeneratorBucket;
+use olympia\items\others\GeneratorCobble;
+use olympia\items\others\GeneratorCraftingTable;
+use olympia\items\others\GeneratorFence;
 use olympia\items\others\SoupItem;
 use olympia\items\partners\EggTrap;
 use olympia\items\partners\FishKnockback;
@@ -115,7 +117,9 @@ class Register {
         $i->register(MythrilSword::class, "mythril_sword", "Epée en mythril");
         $i->register(OrichalqueSword::class, "orichalque_sword", "Epée en orichalque");
         $i->register(FlySoup::class, "fly_soup", "Soupe de Fly");
-        $i->register(GeneratorBucket::class, "generator_bucket", "Generator Bucket");
+        $i->register(GeneratorCobble::class, "generator_cobble", "Generator Bucket");
+        $i->register(GeneratorCraftingTable::class, "generator_craftingtable", "Generator Table de craft");
+        $i->register(GeneratorFence::class, "generator_fence", "Generator Portillon");
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");

@@ -28,7 +28,6 @@ class EggTrap extends Egg implements ItemComponents {
         ]);
     }
 
-
     private function removeCobwebs(array $positions, Player $victim): void {
         $world = $victim->getWorld();
         foreach ($positions as $pos) {

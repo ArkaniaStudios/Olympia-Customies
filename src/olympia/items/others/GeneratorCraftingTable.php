@@ -14,16 +14,16 @@ use pocketmine\math\Vector3;
 use pocketmine\player\Player;
 use pocketmine\world\sound\BlockPlaceSound;
 
-class GeneratorBucket extends Item implements ItemComponents {
+class GeneratorCraftingTable extends Item implements ItemComponents {
     use ItemComponentsTrait;
 
     public function __construct(ItemIdentifier $identifier, string $name = "Unknown", array $enchantmentTags = []) {
         parent::__construct($identifier, $name, $enchantmentTags);
         $creative = new CreativeInventoryInfo(CreativeInventoryInfo::CATEGORY_ITEMS);
-        $this->initComponent("generator_bucket", $creative);
+        $this->initComponent("generator_craftingtable", $creative);
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->setLore([
-            "§rCet objet permet de générer un mur de cobblestone.",
+            "§rCet objet permet de générer un mur de table de craft.",
         ]);
     }
 
@@ -35,8 +35,8 @@ class GeneratorBucket extends Item implements ItemComponents {
     public function onClickAir(Player $player, Vector3 $directionVector, array &$returnedItems): ItemUseResult {
         $pos = $player->getPosition();
         for ($y = 1; $y <= $pos->y - 1; $y++) {
-            $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::COBBLESTONE());
-            $player->broadcastSound(new BlockPlaceSound(VanillaBlocks::COBBLESTONE()));
+            $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::CRAFTING_TABLE());
+            $player->broadcastSound(new BlockPlaceSound(VanillaBlocks::CRAFTING_TABLE()));
             $player->sendPopup("§r§aCobblestone placé !");
         }
         return ItemUseResult::SUCCESS();
