@@ -117,9 +117,9 @@ class Register {
         $i->register(MythrilSword::class, "mythril_sword", "Epée en mythril");
         $i->register(OrichalqueSword::class, "orichalque_sword", "Epée en orichalque");
         $i->register(FlySoup::class, "fly_soup", "Soupe de Fly");
-        $i->register(GeneratorCobble::class, "generator_cobble", "Generator Bucket (Cobble)");
-        $i->register(GeneratorCraftingTable::class, "generator_craftingtable", "Generator Bucket (Fence)");
-        $i->register(GeneratorFence::class, "generator_fence", "Generator Bucket (Fence)");
+        $i->register(GeneratorCobble::class, "generator_cobble", "Generator Bucket (§eCobble§f)");
+        $i->register(GeneratorCraftingTable::class, "generator_craftingtable", "Generator Bucket (§eFence§f)");
+        $i->register(GeneratorFence::class, "generator_fence", "Generator Bucket (§eFence§f)");
 
         /* SPECIAL */
         $i->register(InfinitySword::class, "infinity_sword", "Epée de l'infinie");
@@ -143,7 +143,7 @@ class Register {
     private static function block(): void {
         $b = BlockUtils::getInstance();
         $b->register(ChunkBuster::class, "chunk_buster", "chunk_buster", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
-        $b->register(OrichalqueBlock::class, "orichalque_block", "orichalque_block");
-        $b->register(NoPearlBlock::class, "nopearl_block", "nopearl_block");
+        $b->register(OrichalqueBlock::class, "orichalque_block", "orichalque_block", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
+        $b->register(NoPearlBlock::class, "nopearl_block", "nopearl_block", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
     }
 }
