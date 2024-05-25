@@ -27,8 +27,8 @@ class CronosHelmet extends Armor implements ItemComponents {
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
         $this->setLore([
-            "§rCe casque en cronos sont obtenable en !",
-            "§r§edonjon !",
+            "§rCe casque en cronos sont obtenable en",
+            "§r§edonjon §f!",
         ]);
     }
 

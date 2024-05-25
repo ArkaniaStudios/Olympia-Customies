@@ -37,7 +37,7 @@ class GeneratorCobble extends Item implements ItemComponents {
         for ($y = 1; $y <= $pos->y - 1; $y++) {
             $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::COBBLESTONE());
             $player->broadcastSound(new BlockPlaceSound(VanillaBlocks::COBBLESTONE()));
-            $player->sendPopup("§r§aCobblestone placé !");
+            $player->sendPopup(" §r§eLa Cobblestone à été placé !");
         }
         return ItemUseResult::SUCCESS();
     }

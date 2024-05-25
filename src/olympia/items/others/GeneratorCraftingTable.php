@@ -37,7 +37,7 @@ class GeneratorCraftingTable extends Item implements ItemComponents {
         for ($y = 1; $y <= $pos->y - 1; $y++) {
             $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::CRAFTING_TABLE());
             $player->broadcastSound(new BlockPlaceSound(VanillaBlocks::CRAFTING_TABLE()));
-            $player->sendPopup("§r§aCobblestone placé !");
+            $player->sendPopup(" §r§eLes tables de craft ont été placé!");
         }
         return ItemUseResult::SUCCESS();
     }

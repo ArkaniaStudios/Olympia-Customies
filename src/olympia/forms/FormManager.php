@@ -29,7 +29,7 @@ class FormManager {
                         $centerZ = intval($position->z);
 
                         for ($x = $centerX - $radius; $x <= $centerX + $radius; $x++) {
-                            for ($y = 1; $y <= 100; $y++) {
+                            for ($y = 1; $y <= 200; $y++) {
                                 for ($z = $centerZ - $radius; $z <= $centerZ + $radius; $z++) {
                                     $player->getWorld()->setBlock(new Vector3($x, $y, $z), VanillaBlocks::AIR());
                                     $player->getWorld()->addParticle($position, new ExplodeParticle());

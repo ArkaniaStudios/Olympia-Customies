@@ -39,7 +39,7 @@ class GeneratorFence extends Item implements ItemComponents {
         for ($y = 1; $y <= $pos->y - 1; $y++) {
             $player->getWorld()->setBlock(new Vector3($pos->x, $y, $pos->z), VanillaBlocks::OAK_FENCE_GATE());
             $player->broadcastSound(new BlockPlaceSound(VanillaBlocks::OAK_FENCE_GATE()));
-            $player->sendPopup("§r§aCobblestone placé !");
+            $player->sendPopup(" §r§aLes portillions ont été placé !");
         }
         return ItemUseResult::SUCCESS();
     }

@@ -27,8 +27,8 @@ class TheiaChestplate extends Armor implements ItemComponents {
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
         $this->setLore([
-            "§rCe plastron en cronos sont obtenable en !",
-            "§r§edmine !",
+            "§rCe plastron en cronos sont obtenable en",
+            "§r§emine §f!",
         ]);
     }
 
