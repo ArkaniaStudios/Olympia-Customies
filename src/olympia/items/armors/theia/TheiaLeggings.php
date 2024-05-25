@@ -27,8 +27,8 @@ class TheiaLeggings extends Armor implements ItemComponents {
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
         $this->setLore([
-            "§rCes jambières en theia sont plus §epuissantes §rque le",
-            "§eorichalque§r !",
+            "§rCes jambières en cronos sont obtenable en !",
+            "§r§edmine !",
         ]);
     }
 

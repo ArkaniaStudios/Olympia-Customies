@@ -27,8 +27,8 @@ class TheiaBoots extends Armor implements ItemComponents {
         $this->addComponent(new ArmorComponent(6, textureType: "diamond"));
         $this->addComponent(new DurabilityComponent(992));
         $this->setLore([
-            "§rCes bottes en theia sont plus §epuissantes §rque le",
-            "§eorichalque§r !",
+            "§rCes bottes en cronos sont obtenable en !",
+            "§r§edmine !",
         ]);
     }
 
