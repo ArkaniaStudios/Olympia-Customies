@@ -6,8 +6,10 @@ use customiesdevs\customies\block\Model;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use olympia\blocks\BlockUtils;
 use olympia\blocks\ChunkBuster;
+use olympia\blocks\MythrilOre;
 use olympia\blocks\NoPearlBlock;
 use olympia\blocks\OrichalqueBlock;
+use olympia\blocks\OrichalqueOre;
 use olympia\items\armors\cronos\CronosBoots;
 use olympia\items\armors\cronos\CronosChestplate;
 use olympia\items\armors\cronos\CronosHelmet;
@@ -145,5 +147,7 @@ class Register {
         $b->register(ChunkBuster::class, "chunk_buster", "chunk_buster", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
         $b->register(OrichalqueBlock::class, "orichalque_block", "orichalque_block", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
         $b->register(NoPearlBlock::class, "nopearl_block", "nopearl_block", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
+        $b->register(MythrilOre::class, "mythril_ore", "mythril_ore", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
+        $b->register(OrichalqueOre::class, "orichalque_ore", "orichalque_ore", Model::SOLID, "geometry.block", CreativeInventoryInfo::CATEGORY_CONSTRUCTION);
     }
 }

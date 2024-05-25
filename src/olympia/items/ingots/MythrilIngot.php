@@ -17,7 +17,7 @@ class MythrilIngot extends Item implements ItemComponents {
         $this->initComponent("mythril_ingot", $creative);
         $this->setLore([
             "§rLe mythril est un minerai §eprécieux, néanmoins",
-            "il n'est pas le meilleur !",
+            "§ril n'est pas le meilleur !",
         ]);
     }
 }

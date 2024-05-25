@@ -17,7 +17,7 @@ class OrichalqueIngot extends Item implements ItemComponents {
         $this->initComponent("orichalque_ingot", $creative);
         $this->setLore([
             "§rL'orichalque est un minerai plus §eprécieux que le mythril, néanmoins",
-            "il n'est pas encore le meilleur !",
+            "§ril n'est pas encore le meilleur !",
         ]);
     }
 }
