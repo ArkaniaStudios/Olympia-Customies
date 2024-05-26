@@ -23,7 +23,7 @@ class GeneratorCobble extends Item implements ItemComponents {
         $this->initComponent("generator_cobble", $creative);
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->setLore([
-            "§rCet objet permet de générer un mur de cobblestone.",
+            "§rCet objet permet de générer un mur de §ecobblestone§f.",
         ]);
     }
 

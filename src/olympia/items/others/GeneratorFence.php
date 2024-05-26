@@ -26,7 +26,7 @@ class GeneratorFence extends Item implements ItemComponents {
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->addComponent(new DurabilityComponent(128));
         $this->setLore([
-            "§rCet objet permet de générer un mur de portillions.",
+            "§rCet objet permet de générer un mur de §eportillions§f.",
         ]);
     }
 

@@ -23,7 +23,7 @@ class GeneratorCraftingTable extends Item implements ItemComponents {
         $this->initComponent("generator_craftingtable", $creative);
         $this->addComponent(new MaxStackSizeComponent(1));
         $this->setLore([
-            "§rCet objet permet de générer un mur de table de craft.",
+            "§rCet objet permet de générer un mur de §etable de craft§f.",
         ]);
     }
 
