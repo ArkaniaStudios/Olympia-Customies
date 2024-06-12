@@ -17,9 +17,13 @@ class CraftRecipes {
     private ExactRecipeIngredient $stick;
     private ExactRecipeIngredient $orichalqueB;
 
+    private ExactRecipeIngredient $orichalqueN;
+
+
     public function __construct() {
         $this->mythrilI = new ExactRecipeIngredient(OlympiaItems::MYTHRIL_INGOT());
         $this->orichalqueI = new ExactRecipeIngredient(OlympiaItems::ORICHALQUE_INGOT());
+        $this->orichalqueN = new ExactRecipeIngredient(OlympiaItems::ORICHALQUE_NUGGET());
         $this->stick = new ExactRecipeIngredient(VanillaItems::STICK());
         $this->orichalqueB = new ExactRecipeIngredient(OlympiaBlocks::ORICHALQUE_BLOCK()->asItem());
     }
@@ -33,6 +37,7 @@ class CraftRecipes {
             Server::getInstance()->getCraftingManager()->registerShapedRecipe($craft);
         }
     }
+
 
     private function armorRecipes(): void {
         $types = [
@@ -54,6 +59,7 @@ class CraftRecipes {
         $this->crafts[] = new ShapedRecipe(["  A", " AA", "B  "], ["A" => $this->mythrilI, "B" => $this->stick], [OlympiaItems::MYTHRIL_SICKLE()]);
         $this->crafts[] = new ShapedRecipe(["A", "A", "B"], ["A" => $this->orichalqueI, "B" => $this->stick], [OlympiaItems::ORICHALQUE_SWORD()]);
         $this->crafts[] = new ShapedRecipe(["  A", " AA", "B  "], ["A" => $this->orichalqueB, "B" => $this->stick], [OlympiaItems::ORICHALQUE_SICKLE()]);
+        $this->crafts[] = new ShapedRecipe(["AAA", "AAA", "AAA"], ["A" => $this->orichalqueN], [OlympiaItems::ORICHALQUE_INGOT()]);
     }
 
     private function blocksRecipes(): void {

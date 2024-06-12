@@ -24,4 +24,9 @@ class MythrilOre extends Block {
         $player?->getWorld()->dropExperience($player->getPosition(), 5);
         return parent::onBreak($item, $player, $returnedItems);
     }
+
+    public function getDropsForCompatibleTool(Item $item): array
+    {
+        return [OlympiaItems::MYTHRIL_INGOT()];
+    }
 }

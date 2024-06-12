@@ -20,8 +20,15 @@ class OrichalqueOre extends Block {
 
     public function onBreak(Item $item, ?Player $player = null, array &$returnedItems = []): bool
     {
-        $player?->getInventory()->addItem(OlympiaItems::ORICHALQUE_INGOT());
+
+        $player?->getInventory()->addItem(OlympiaItems::ORICHALQUE_NUGGET());
         $player?->getWorld()->dropExperience($player->getPosition(), 10);
         return parent::onBreak($item, $player, $returnedItems);
     }
+
+    public function getDropsForCompatibleTool(Item $item): array
+    {
+        return [OlympiaItems::ORICHALQUE_NUGGET()];
+    }
+
 }

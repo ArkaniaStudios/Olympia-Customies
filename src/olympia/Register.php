@@ -30,6 +30,7 @@ use olympia\items\armors\theia\TheiaHelmet;
 use olympia\items\armors\theia\TheiaLeggings;
 use olympia\items\ingots\MythrilIngot;
 use olympia\items\ingots\OrichalqueIngot;
+use olympia\items\ingots\OrichalqueNugget;
 use olympia\items\ItemUtils;
 use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
@@ -115,12 +116,13 @@ class Register {
         /* ITEMS */
         $i->register(MythrilIngot::class, "mythril_ingot", "L'ingot de Mythril");
         $i->register(OrichalqueIngot::class, "orichalque_ingot", "L'ingot d'Orichalque");
+        $i->register(OrichalqueNugget::class, "orichalque_nugget", "Pépite d'Orichalque");
         $i->register(SoupItem::class, "soup_item", "Soupe");
         $i->register(MythrilSword::class, "mythril_sword", "Epée en mythril");
         $i->register(OrichalqueSword::class, "orichalque_sword", "Epée en orichalque");
         $i->register(FlySoup::class, "fly_soup", "Soupe de Fly");
         $i->register(GeneratorCobble::class, "generator_cobble", "Generator Bucket (§eCobble§f)");
-        $i->register(GeneratorCraftingTable::class, "generator_craftingtable", "Generator Bucket (§eFence§f)");
+        $i->register(GeneratorCraftingTable::class, "generator_craftingtable", "Generator Bucket (§eTable de Craft§f)");
         $i->register(GeneratorFence::class, "generator_fence", "Generator Bucket (§eFence§f)");
 
         /* SPECIAL */

@@ -23,6 +23,7 @@ use olympia\items\armors\theia\TheiaHelmet;
 use olympia\items\armors\theia\TheiaLeggings;
 use olympia\items\ingots\MythrilIngot;
 use olympia\items\ingots\OrichalqueIngot;
+use olympia\items\ingots\OrichalqueNugget;
 use olympia\items\key\CosmeticKey;
 use olympia\items\key\EpicKey;
 use olympia\items\key\EventKey;
@@ -99,6 +100,7 @@ use pocketmine\utils\CloningRegistryTrait;
  * ITEMS :
  * @method static MythrilIngot MYTHRIL_INGOT()
  * @method static OrichalqueIngot ORICHALQUE_INGOT()
+ * @method static OrichalqueNugget ORICHALQUE_NUGGET()
  * @method static SoupItem SOUP_ITEM()
  * @method static MythrilSword MYTHRIL_SWORD()
  * @method static FlySoup FLY_SOUP()
@@ -143,6 +145,7 @@ final class OlympiaItems {
 
         self::_registryRegister("mythril_ingot", self::get("mythril_ingot"));
         self::_registryRegister("orichalque_ingot", self::get("orichalque_ingot"));
+        self::_registryRegister("orichalque_nugget", self::get("orichalque_nugget"));
         self::_registryRegister("soup_item", self::get("soup_item"));
         self::_registryRegister("mythril_sword", self::get("mythril_sword"));
         self::_registryRegister("fly_soup", self::get("fly_soup"));
