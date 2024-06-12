@@ -5,10 +5,8 @@ namespace olympia\items\partners;
 use customiesdevs\customies\item\CreativeInventoryInfo;
 use customiesdevs\customies\item\ItemComponents;
 use customiesdevs\customies\item\ItemComponentsTrait;
-use pocketmine\event\entity\ProjectileHitEntityEvent;
 use pocketmine\item\ItemIdentifier;
 use pocketmine\item\Snowball;
-use pocketmine\player\Player;
 
 class SwitchBall extends Snowball implements ItemComponents {
     use ItemComponentsTrait;
